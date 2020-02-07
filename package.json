@@ -1,0 +1,19 @@
+{
+  "name": "book",
+  "version": "1.0.0",
+  "description": "Multi-paradigm Approach to the Software Engineering",
+  "main": "compile.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HowProgrammingWorks/Book.git"
+  },
+  "author": "Timur Shemsedinov <timur.shemsedinov@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/HowProgrammingWorks/Book/issues"
+  },
+  "homepage": "https://github.com/HowProgrammingWorks/Book",
+  "dependencies": {
+    "pdfmake": "^0.1.64"
+  }
+}
