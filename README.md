@@ -1,2 +1,1 @@
-# Book
-Multi-paradigm Approach to the Software Engineering
+# Multi-paradigm Approach to the Software Engineering
