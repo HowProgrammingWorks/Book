@@ -74,6 +74,9 @@ const code = (src) => {
   });
 };
 
+const data = fs.readFileSync('content/Fundamentals.en.md', 'utf8');
+para(data);
+
 para('Consider following:');
 code(`const id = (x) => x;
 
@@ -81,9 +84,6 @@ code(`const id = (x) => x;
 
 const res = id(5);
 console.log({ res });`);
-
-const data = fs.readFileSync('content/Fundamentals.md', 'utf8');
-para(data);
 
 const now = new Date();
 
