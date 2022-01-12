@@ -1,7 +1,7 @@
 {
   "name": "book",
   "version": "1.0.0",
-  "description": "Multi-paradigm Approach to the Software Engineering",
+  "description": "Multi-paradigm and Meta-programming in the Software Engineering",
   "main": "compile.js",
   "repository": {
     "type": "git",
@@ -13,7 +13,17 @@
     "url": "https://github.com/HowProgrammingWorks/Book/issues"
   },
   "homepage": "https://github.com/HowProgrammingWorks/Book",
+  "scripts": {
+    "build": "npm run fmt && node compile.js",
+    "fmt": "prettier --write \"**/*.js\" \"**/*.json\" \"**/*.md\""
+  },
   "dependencies": {
-    "pdfmake": "^0.1.72"
+    "pdfmake": "^0.1.72",
+    "eslint": "^7.31.0",
+    "eslint-config-metarhia": "^7.0.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-prettier": "^4.0.0",
+    "prettier": "^2.5.1"
   }
 }
