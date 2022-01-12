@@ -1,1 +1,7 @@
-# Multi-paradigm Approach to the Software Engineering
+# Multi-paradigm and Meta-programming in the Software Engineering
+
+To build pdf file run:
+```
+npm i
+npm run build
+```
