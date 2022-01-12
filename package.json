@@ -2,7 +2,7 @@
   "name": "book",
   "version": "1.0.0",
   "description": "Multi-paradigm and Meta-programming in the Software Engineering",
-  "main": "compile.js",
+  "main": "build.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/HowProgrammingWorks/Book.git"
@@ -14,7 +14,7 @@
   },
   "homepage": "https://github.com/HowProgrammingWorks/Book",
   "scripts": {
-    "build": "npm run fmt && node compile.js",
+    "build": "npm run fmt && node build.js",
     "fmt": "prettier --write \"**/*.js\" \"**/*.json\" \"**/*.md\""
   },
   "dependencies": {
