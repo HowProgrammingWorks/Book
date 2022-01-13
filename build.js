@@ -34,21 +34,39 @@ content.push('\n\n');
 content.push({
   text: 'Copyright © Timur Shemsedinov and \nHowProgrammingWorks contributors',
   fontSize: 14,
-  margin: [40, 0, 40, 0],
+  margin: [40, 10, 10, 10],
 });
 
 content.push({
   text: '\nKiev, 2015-2022',
   fontSize: 14,
-  margin: [40, 0, 40, 0],
+  margin: [40, 8, 5, 8],
   pageBreak: 'after',
 });
+
+const caption = (s) => {
+  content.push({
+    text: s,
+    fontSize: 15,
+    bold: true,
+    margin: [30, 5, 5, 5],
+  });
+};
+
+const index = (s) => {
+  content.push({
+    text: s,
+    fontSize: 12,
+    margin: [30, 2, 5, 2],
+    preserveLeadingSpaces: true,
+  });
+};
 
 const para = (s) => {
   content.push({
     text: s,
     fontSize: 12,
-    margin: [30, 10, 30, 10],
+    margin: [30, 5, 5, 5],
   });
 };
 
@@ -74,8 +92,19 @@ const code = (src) => {
   });
 };
 
-const data = fs.readFileSync('content/Index.en.md', 'utf8');
-para(data);
+const src = fs.readFileSync('content/Index.en.md', 'utf8');
+const data = src.split('\n');
+for (let i = 0; i < data.length; i++) {
+  const row = data[i];
+  if (row.startsWith('#')) {
+    const text = row.replace('#', '');
+    caption(text);
+  } else if (row.includes('. ')) {
+    index(row);
+  } else {
+    para(row);
+  }
+}
 
 para('Consider following:');
 code(`const id = (x) => x;
