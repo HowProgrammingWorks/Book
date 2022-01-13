@@ -74,7 +74,7 @@ const code = (src) => {
   });
 };
 
-const data = fs.readFileSync('content/Fundamentals.en.md', 'utf8');
+const data = fs.readFileSync('content/Index.en.md', 'utf8');
 para(data);
 
 para('Consider following:');
