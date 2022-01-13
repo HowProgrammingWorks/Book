@@ -1,27 +1,12 @@
-# Programming basics
-
-## Abstract
-
-## Links
-
-- Author: https://github.com/tshemsedinov
-- Telegram: https://t.me/HowProgrammingWorks
-- Excercises: https://github.com/HowProgrammingWorks/Index/blob/master/Exercises.ru.md
-- Glossary: https://github.com/HowProgrammingWorks/Dictionary/blob/master/Fundamentals.ru.md
-
-36 lectures (4 introductory topics, 8 lectures about JavaScript programming
-language, 18 lectures about fundamental programming concepts, 6 lectures about
-development tools and processes), 8 seminars, 9 practices and assignments, 47
-repositories with code examples.
-
-## Index
+# Index
 
 1. Introduction  
-  1.1. Modeling: abstractions and reuse  
-  1.2. Algorithm, program, syntax, language  
-  1.3. Decomposition and separation of concerns  
-  1.4. Software engineering problems overview  
-  1.5. Programming paradigms overview  
+  1.1. Approach to learn programming  
+  1.2. Modeling: abstractions and reuse  
+  1.3. Algorithm, program, syntax, language  
+  1.4. Decomposition and separation of concerns  
+  1.5. Software engineer speciality overview  
+  1.6. Programming paradigms overview  
 2. Basic concepts with examples in JavaScript, Python and C syntax  
   2.1. Value, identifier, variable and constant, literal, assignment  
   2.2. Data types, scalar, reference and structured types  
@@ -38,6 +23,7 @@ repositories with code examples.
   3.4. Dictionaries, hash table and associative array  
   3.5. Stack, queue, deque  
   3.6. Trees and Graphs  
+  3.7. Dataset projections  
 4. Extended concepts  
   4.1. Programming languages and paradigms, technology stack  
   4.2. Development environment and debugging  
@@ -63,14 +49,17 @@ repositories with code examples.
 6. Development process  
   6.1. Refactoring  
   6.2. Code review  
-  6.3. Multi-aspect optimizations  
+  6.3. Computational complexity estimation  
+  6.4. Testing: unittests, system and integration testing
+  6.5. Monomorphic code in dynamic languages  
+  6.6. Multi-aspect optimizations  
 7. Advanced concepts  
   7.1. Events, Timers and EventEmitter  
-  7.2. Serialization and deserialization  
-  7.3. Regular expressions  
-  7.4. Memoization  
-  7.5. Factory and Poll  
-  7.6. Wrappers  
+  7.2. Introspection and reflection  
+  7.3. Serialization and deserialization  
+  7.4. Regular expressions  
+  7.5. Memoization  
+  7.6. Factory and Poll  
   7.7. Typed arrays  
   7.8. Projections  
   7.9. I/O and Files  
@@ -89,3 +78,4 @@ repositories with code examples.
 10. Databases and persistent storage  
 11. Software architecture  
 12. Distributed systems  
+
