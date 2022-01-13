@@ -7,7 +7,7 @@
    1.4. Decomposition and separation of concerns  
    1.5. Software engineer speciality overview  
    1.6. Programming paradigms overview
-2. Basic concepts with examples in JavaScript, Python and C syntax  
+2. Basic concepts in JavaScript, Python and C syntax  
    2.1. Value, identifier, variable and constant, literal, assignment  
    2.2. Data types, scalar, reference and structured types  
    2.3. Contexts and lexical scope  
