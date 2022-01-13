@@ -9,8 +9,10 @@
 
 ## Module SEF1
 
-36 lectures (4 introductory topics, 8 lectures about JavaScript programming language, 18 lectures about fundamental programming concepts, 
-6 lectures about development tools and processes), 8 seminars, 9 practices and assignments, 47 repositories with code examples.
+36 lectures (4 introductory topics, 8 lectures about JavaScript programming
+language, 18 lectures about fundamental programming concepts, 6 lectures about
+development tools and processes), 8 seminars, 9 practices and assignments, 47
+repositories with code examples.
 
 1. Introduction  
    1.1. Abstractions, modeling, reuse  
@@ -48,7 +50,7 @@
    6.1. Refactoring  
    6.2. Code review  
    6.3. Multi-aspect optimizations  
-8. Advanced concepts, tips and tricks  
+8. Advanced concepts  
    7.1. Events, Timers and EventEmitter  
    7.2. Serialization and deserialization  
    7.3. Regular expressions  
