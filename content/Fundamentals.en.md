@@ -16,18 +16,18 @@ repositories with code examples.
 
 1. Introduction  
    1.1. Abstractions, modeling, reuse  
-   1.2. Algorythm, program, syntax, language  
+   1.2. Algorithm, program, syntax, language
    1.3. Value, identifier, variable and constant, literal, assignment    
    1.4. Data types, scalar, reference and structured types  
    1.5. Operator and expression, code block, function, loop, condition  
-   1.6. Procedural paragidm, call, stack and heap  
+   1.6. Procedural paradigm, call, stack and heap
    1.7. Application building blocks: modules, dependencies, libraries, components  
    1.8. Programming languages and paradigms, technology stack  
    1.9. Development environment and debugging  
 2. JavaScript, Python and C syntax  
 3. Collections  
    3.1. Array, list, set, tuple  
-   3.2. Dictionaries, hash table and assiciative array  
+   3.2. Dictionaries, hash table and associative array
    3.3. Stack, queue, deque  
    3.4. Trees, Graphs  
    3.5. Structs and records  
@@ -43,7 +43,7 @@ repositories with code examples.
    4.9. Mixins  
 6. Antipatterns  
    5.1. Common for all paradigms  
-   5.2. Procedural anpipatterns  
+   5.2. Procedural antipatterns
    5.3. Object-oriented antipatterns  
    5.4. Functional antipatterns  
 7. Development process  
