@@ -18,12 +18,13 @@
     "fmt": "prettier --write \"**/*.js\" \"**/*.json\" \"**/*.md\""
   },
   "dependencies": {
-    "pdfmake": "^0.1.72",
     "eslint": "^7.31.0",
     "eslint-config-metarhia": "^7.0.1",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-import": "^2.25.4",
     "eslint-plugin-prettier": "^4.0.0",
-    "prettier": "^2.5.1"
+    "pdfmake": "^0.1.72",
+    "prettier": "^2.5.1",
+    "yaspeller": "^8.0.0"
   }
 }
