@@ -1,0 +1,16 @@
+{
+  "excludeFiles": [
+    ".git",
+    "fonts",
+    "node_modules",
+    "yaspeller"
+  ],
+  "fileExtensions": [
+    ".md"
+  ],
+  "format": "markdown",
+  "ignoreCapitalization": true,
+  "ignoreUppercase": true,
+  "ignoreUrls": true,
+  "dictionary": []
+}
