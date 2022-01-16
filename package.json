@@ -15,7 +15,8 @@
   "homepage": "https://github.com/HowProgrammingWorks/Book",
   "scripts": {
     "build": "npm run fmt && node build.js",
-    "fmt": "prettier --write \"**/*.js\" \"**/*.json\" \"**/*.md\""
+    "fmt": "prettier --write \"**/*.js\" \"**/*.json\" \"**/*.md\"",
+    "lint:spell": "yaspeller ."
   },
   "dependencies": {
     "eslint": "^7.31.0",
