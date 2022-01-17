@@ -76,6 +76,7 @@
     10.1. Asynchronous programming  
     10.2. Parallel programming  
     10.3. Actor-based programming
+    10.4. Lock-free data structures  
 11. Advanced programming paradigms  
     11.1. Generic programming  
     11.2. Event-driven and reactive programming  
@@ -92,4 +93,10 @@
     11.5. Hierarchical and graph databases  
     11.6. Column databases and in-memory databases  
     11.7. Distributed databases
-13. Distributed systems
+13. Distributed systems  
+    13.1. Interprocess communication  
+    13.2. Conflict-free replicated data types  
+    13.3. Consistency, availability, and partition  
+    13.4. Conflict resolution strategies  
+    13.5. Consensus protocols  
+    13.6. CQRS, EventSourcing
