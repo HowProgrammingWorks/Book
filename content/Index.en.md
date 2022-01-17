@@ -16,7 +16,8 @@
    2.5. Procedural paradigm, call, stack and heap  
    2.6. Higher-order function, pure function, side effects  
    2.7. Closures, callbacks, wrappers, and events  
-   2.8. Exceptions and error handling
+   2.8. Exceptions and error handling  
+   2.9. Monomorphic code in dynamic languages
 3. Application state, data structures and collections  
    3.1. Stateful and stateless approach  
    3.2. Structs and records  
@@ -24,7 +25,8 @@
    3.4. Dictionaries, hash table and associative array  
    3.5. Stack, queue, deque  
    3.6. Trees and Graphs  
-   3.7. Dataset projections
+   3.7. Dataset projections  
+   3.8. Computational complexity estimation
 4. Extended concepts  
    4.1. What is a technology stack  
    4.2. Development environment and debugging  
@@ -48,12 +50,15 @@
    6.3. Object-oriented antipatterns  
    6.4. Functional antipatterns
 7. Development process  
-   7.1. Refactoring  
-   7.2. Code review  
-   7.3. Computational complexity estimation  
-   7.4. Testing: unittests, system and integration testing  
-   7.5. Monomorphic code in dynamic languages  
-   7.6. Multi-aspect optimizations
+   7.1. Software life cycle, subject domain analysis  
+   7.2. Code conventions and standards  
+   7.3. Testing: unittests, system and integration testing  
+   7.4. Code review and refactoring  
+   7.5. Resources estimation, development plan and schedule  
+   7.6. Risks analysis, weaknesses, non-functional requirements  
+   7.7. Coordination and adjustment of the process  
+   7.8. Continuous deployment and delivery  
+   7.9. Multi-aspect optimizations
 8. Advanced concepts  
    8.1. Events, Timers and EventEmitter  
    8.2. Introspection and reflection  
