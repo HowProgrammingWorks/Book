@@ -2,12 +2,13 @@
 
 1. Introduction  
    1.1. Approach to learn programming  
-   1.2. Modeling: abstractions and reuse  
-   1.3. Algorithm, program, syntax, language  
-   1.4. Decomposition and separation of concerns  
-   1.5. Software engineer speciality overview  
-   1.6. Programming paradigms overview
-2. Basic concepts in JavaScript, Python and C syntax  
+   1.2. Examples in JavaScript, Python and C syntax  
+   1.3. Modeling: abstractions and reuse  
+   1.4. Algorithm, program, syntax, language  
+   1.5. Decomposition and separation of concerns  
+   1.6. Software engineer speciality overview  
+   1.7. Programming paradigms overview
+2. Basic concepts  
    2.1. Value, identifier, variable and constant, literal, assignment  
    2.2. Data types, scalar, reference and structured types  
    2.3. Contexts and lexical scope  
@@ -25,7 +26,7 @@
    3.6. Trees and Graphs  
    3.7. Dataset projections
 4. Extended concepts  
-   4.1. Programming languages and paradigms, technology stack  
+   4.1. What is a technology stack  
    4.2. Development environment and debugging  
    4.3. Iterations: recursion, iterators, and generators  
    4.4. Application building blocks: files, modules, components  
@@ -63,19 +64,27 @@
    8.7. Typed arrays  
    8.8. Projections  
    8.9. I/O and Files
-9. Concurrent computing basics  
-   9.1. Asynchronous programming  
-   9.2. Parallel programming  
-   9.3. Actor-based programming
-10. Advanced programming paradigms  
-    10.1. Generic programming  
-    10.2. Event-driven and reactive programming  
-    10.3. Automata-based programming and state machines  
-    10.4. Language-oriented programming and DSLs  
-    10.5. Data-flow programming  
-    10.6. Metaprogramming  
-    10.7. Metamodel dynamic interpretation
-11. Databases and persistent storage  
+9. Architecture  
+   9.1. Decomposition, naming and linking  
+   9.2. Interaction between software components  
+   9.3. Coupling with namespaces  
+   9.4. Interaction with calls and callbacks  
+   9.5. Interaction with events and messages  
+   9.6. Interfaces, protocols and contracts  
+   6.7. Onion aka multi-layer approach
+10. Concurrent computing basics  
+    10.1. Asynchronous programming  
+    10.2. Parallel programming  
+    10.3. Actor-based programming
+11. Advanced programming paradigms  
+    11.1. Generic programming  
+    11.2. Event-driven and reactive programming  
+    11.3. Automata-based programming and state machines  
+    11.4. Language-oriented programming and DSLs  
+    11.5. Data-flow programming  
+    11.6. Metaprogramming  
+    11.7. Metamodel dynamic interpretation
+12. Databases and persistent storage  
     11.1. History of databases and navigational databases  
     11.2. Key-value and other abstract data structures databases  
     11.3. Relational data model and ER-diagrams  
@@ -83,5 +92,4 @@
     11.5. Hierarchical and graph databases  
     11.6. Column databases and in-memory databases  
     11.7. Distributed databases
-12. Software architecture
 13. Distributed systems
