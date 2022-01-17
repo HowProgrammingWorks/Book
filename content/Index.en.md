@@ -1,8 +1,8 @@
 # Index
 
 1. Introduction  
-   1.1. Approach to learn programming  
-   1.2. Examples in JavaScript, Python and C syntax  
+   1.1. Approach to learning programming  
+   1.2. Examples in JavaScript, Python and C languages  
    1.3. Modeling: abstractions and reuse  
    1.4. Algorithm, program, syntax, language  
    1.5. Decomposition and separation of concerns  
@@ -45,7 +45,7 @@
    5.5. Object-oriented programming  
    5.6. Prototype-based programming
 6. Antipatterns  
-   6.1. Common for all paradigms  
+   6.1. Common antipatterns for all paradigms  
    6.2. Procedural antipatterns  
    6.3. Object-oriented antipatterns  
    6.4. Functional antipatterns
