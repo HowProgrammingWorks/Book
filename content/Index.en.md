@@ -75,6 +75,13 @@
     10.5. Data-flow programming  
     10.6. Metaprogramming  
     10.7. Metamodel dynamic interpretation
-11. Databases and persistent storage
+11. Databases and persistent storage  
+    11.1. History of databases and navigational databases  
+    11.2. Key-value and other abstract data structures databases  
+    11.3. Relational data model and ER-diagrams  
+    11.4. Schemaless, object-oriented and document-oriented databases  
+    11.5. Hierarchical and graph databases  
+    11.6. Column databases and in-memory databases  
+    11.7. Distributed databases
 12. Software architecture
 13. Distributed systems
