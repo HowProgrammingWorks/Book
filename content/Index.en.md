@@ -74,9 +74,14 @@
    6.7. Onion aka multi-layer approach
 10. Concurrent computing basics  
     10.1. Asynchronous programming  
-    10.2. Parallel programming  
-    10.3. Actor-based programming
-    10.4. Lock-free data structures  
+    10.2. Parallel programming, shared memory and sync primitives  
+    10.3. Async primitives: Thenable, Promise, Future, Deferred  
+    10.4. Coroutines, goroutines, async/await  
+    10.5. Adapters between asynchronous contracts  
+    10.6. Asynchronous and parallel interoperability  
+    10.7. Message passing approach and actor model  
+    10.8. Asynchronous queue and async collections  
+    10.8. Lock-free data structures
 11. Advanced programming paradigms  
     11.1. Generic programming  
     11.2. Event-driven and reactive programming  
