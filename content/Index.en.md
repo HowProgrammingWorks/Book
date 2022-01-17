@@ -72,7 +72,7 @@
     10.2. Event-driven and reactive programming  
     10.3. Automata-based programming and state machines  
     10.4. Language-oriented programming and DSLs  
-    10.5. Data-flow pogramming  
+    10.5. Data-flow programming  
     10.6. Metaprogramming  
     10.7. Metamodel dynamic interpretation
 11. Databases and persistent storage
