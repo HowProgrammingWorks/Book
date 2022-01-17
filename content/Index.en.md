@@ -86,13 +86,13 @@
     11.6. Metaprogramming  
     11.7. Metamodel dynamic interpretation
 12. Databases and persistent storage  
-    11.1. History of databases and navigational databases  
-    11.2. Key-value and other abstract data structures databases  
-    11.3. Relational data model and ER-diagrams  
-    11.4. Schemaless, object-oriented and document-oriented databases  
-    11.5. Hierarchical and graph databases  
-    11.6. Column databases and in-memory databases  
-    11.7. Distributed databases
+    12.1. History of databases and navigational databases  
+    12.2. Key-value and other abstract data structures databases  
+    12.3. Relational data model and ER-diagrams  
+    12.4. Schemaless, object-oriented and document-oriented databases  
+    12.5. Hierarchical and graph databases  
+    12.6. Column databases and in-memory databases  
+    12.7. Distributed databases
 13. Distributed systems  
     13.1. Interprocess communication  
     13.2. Conflict-free replicated data types  
