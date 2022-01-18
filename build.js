@@ -49,7 +49,7 @@ const caption = (s) => {
     text: s,
     fontSize: 15,
     bold: true,
-    margin: [30, 5, 5, 5],
+    margin: [30, 5, 30, 5],
   });
 };
 
@@ -57,7 +57,7 @@ const index = (s) => {
   content.push({
     text: s,
     fontSize: 12,
-    margin: [30, 2, 5, 2],
+    margin: [30, 2, 30, 2],
     preserveLeadingSpaces: true,
   });
 };
@@ -66,7 +66,8 @@ const para = (s) => {
   content.push({
     text: s,
     fontSize: 12,
-    margin: [30, 5, 5, 5],
+    alignment: 'justify',
+    margin: [30, 5, 30, 5],
   });
 };
 
@@ -92,8 +93,14 @@ const code = (src) => {
   });
 };
 
+const abstract = fs.readFileSync('content/Abstract.en.md', 'utf8');
+const text = abstract.replace('#', '').split('\n');
+caption(text.shift());
+para(text.join(' '));
+
 const src = fs.readFileSync('content/Index.en.md', 'utf8');
 const data = src.split('\n');
+
 for (let i = 0; i < data.length; i++) {
   const row = data[i];
   if (row.startsWith('#')) {
@@ -106,6 +113,7 @@ for (let i = 0; i < data.length; i++) {
   }
 }
 
+/*
 para('Consider following:');
 code(`const id = (x) => x;
 
@@ -113,6 +121,7 @@ code(`const id = (x) => x;
 
 const res = id(5);
 console.log({ res });`);
+*/
 
 const now = new Date();
 
