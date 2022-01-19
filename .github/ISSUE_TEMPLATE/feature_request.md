@@ -6,7 +6,8 @@ labels: feature
 assignees: ''
 ---
 
-**Please describe your proposal.** A clear and concise description of what you want to see in this book.
+**Please describe your proposal.** A clear and concise description of what you
+want to see in this book.
 
 **Describe alternatives you've considered** A clear and concise description of
 any alternative ideas you've considered.
