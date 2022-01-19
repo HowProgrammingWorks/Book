@@ -4,7 +4,7 @@ about: Please don't open an issue to ask questions
 ---
 
 Issues on GitHub are intended to be related to problems and feature requests so
-we recommend not using this medium to ask them here grin. Thanks for
+we recommend not using this medium to ask them here. Thanks for
 understanding!
 
 If you have a question, please check out our support groups and channels for
