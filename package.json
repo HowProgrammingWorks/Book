@@ -12,7 +12,11 @@
   "bugs": {
     "url": "https://github.com/HowProgrammingWorks/Book/issues"
   },
-  "homepage": "https://github.com/HowProgrammingWorks/Book",
+  "homepage": "https://metarhia.com",
+  "funding": {
+    "type": "patreon",
+    "url": "https://www.patreon.com/tshemsedinov"
+  },
   "scripts": {
     "build": "npm run fmt && node build.js",
     "fmt": "prettier --write \"**/*.js\" \"**/*.json\" \"**/*.md\""
