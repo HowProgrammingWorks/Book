@@ -18,8 +18,8 @@
     "url": "https://www.patreon.com/tshemsedinov"
   },
   "scripts": {
-    "build": "npm run fmt && node build.js",
-    "fmt": "prettier --write \"**/*.js\" \"**/*.json\" \"**/*.md\""
+    "build": "npm run format && node build.js",
+    "format": "prettier --write \"**/*.js\" \"**/*.json\" \"**/*.md\""
   },
   "dependencies": {
     "pdfmake": "^0.1.72",
