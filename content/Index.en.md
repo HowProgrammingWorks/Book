@@ -22,7 +22,7 @@
    3.1. Stateful and stateless approach  
    3.2. Structs and records  
    3.3. Array, list, set, tuple  
-   3.4. Dictionaries, hash table and associative array  
+   3.4. Dictionary, hash table and associative array  
    3.5. Stack, queue, deque  
    3.6. Trees and Graphs  
    3.7. Dataset projections  
