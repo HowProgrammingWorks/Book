@@ -1,7 +1,7 @@
 # Introduction
 
 Regular reinterpretation of personal activity, even the simplest one, should accompany an engineer all his life. 
-The practice of writing down personal thoughts as well as refining personal formulations helps a lot in this process. 
+The practice of writing down personal thoughts as well as refining formulations helps a lot in this process. 
 This book was formed from my sketchy notes, which I accumulated over a number of years, and also critically proofread dozens of times. 
 Often I disagreed with myself, rereading a passage after it had been lying down for a while, and found that it could be made even shorter. 
 
