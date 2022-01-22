@@ -7,7 +7,7 @@ Often I disagreed with myself, rereading a passage after it had been lying down 
 
 Therefore, I brought the text to the point where it did not cause me contradictions after long periods of time. 
 Given the above, I consider that my main task for this book is to systematize the accumulated knowledge and present them as shortly and succinctly as possible. 
-The structure of the book and its table of contents began to appear after the first year of my teaching, and in the tenth year I decided to post all the accumulated materials not only in the form of open video lectures, as I had been doing this for about five years, but also in the text form. 
+The structure of the book and its table of contents began to appear after the first year of my teaching, and in the tenth year I decided to post all the accumulated materials not only in the form of free video lectures, as I had been doing this for about five years, but also in the text form. 
 This allowed everyone from the Metarchia community to participate in the creation of the book, quickly find typos and inaccuracies due to readers, and also take into account the fact that it is simply more convenient for many to perceive information in printed form. 
 The current version of the book can always be found at: https://github.com/HowProgrammingWorks/Book, it will be updated constantly. 
 Please send requests for corrections and additions to issues in English, new ideas in any language - to discussions , and submit your additions and corrections as a pull-request to the book repository.
