@@ -20,10 +20,29 @@ const fonts = {
 
 const printer = new PdfPrinter(fonts);
 
+const languages = { EN: 'en', RU: 'ru' };
+
+const lang = languages.EN; // build language
+
+const frontpage = {
+  title: {
+    en: 'Multi-paradigm and\nMeta-programming in\nthe Software Engineering',
+    ru: 'Мультипарадигменное и\nметапрограммирование в программной инженерии',
+  },
+  author: {
+    en: 'Copyright © Timur Shemsedinov and \nHowProgrammingWorks contributors',
+    ru: 'Тимур Шемсединов и контрибьюторы \nHowProgrammingWorks',
+  },
+  location: {
+    en: '\nKiev, 2015-2022',
+    ru: '\nКиев, 2015-2022',
+  },
+};
+
 const content = [];
 
 content.push({
-  text: 'Multi-paradigm and\nMeta-programming in\nthe Software Engineering',
+  text: frontpage.title[lang],
   bold: true,
   fontSize: 28,
   margin: [40, 20, 40, 0],
@@ -32,13 +51,13 @@ content.push({
 content.push('\n\n');
 
 content.push({
-  text: 'Copyright © Timur Shemsedinov and \nHowProgrammingWorks contributors',
+  text: frontpage.author[lang],
   fontSize: 14,
   margin: [40, 10, 10, 10],
 });
 
 content.push({
-  text: '\nKiev, 2015-2022',
+  text: frontpage.location[lang],
   fontSize: 14,
   margin: [40, 8, 5, 8],
   pageBreak: 'after',
@@ -93,12 +112,12 @@ const code = (src) => {
   });
 };
 
-const abstract = fs.readFileSync('content/Abstract.en.md', 'utf8');
+const abstract = fs.readFileSync(`content/Abstract.${lang}.md`, 'utf8');
 const text = abstract.replace('#', '').split('\n');
 caption(text.shift());
 para(text.join(' '));
 
-const src = fs.readFileSync('content/Index.en.md', 'utf8');
+const src = fs.readFileSync(`content/Index.${lang}.md`, 'utf8');
 const data = src.split('\n');
 
 for (let i = 0; i < data.length; i++) {
