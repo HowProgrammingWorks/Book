@@ -29,18 +29,16 @@ content.push({
   margin: [40, 20, 40, 0],
 });
 
-content.push('\n\n');
-
 content.push({
   text: 'Copyright © Timur Shemsedinov and \nHowProgrammingWorks contributors',
   fontSize: 14,
-  margin: [40, 10, 10, 10],
+  margin: [40, 40, 40, 0],
 });
 
 content.push({
-  text: '\nKiev, 2015-2022',
+  text: 'Kiev, 2015-2022',
   fontSize: 14,
-  margin: [40, 8, 5, 8],
+  margin: [40, 40, 40, 0],
   pageBreak: 'after',
 });
 
