@@ -39,8 +39,9 @@ content.push({
   text: 'Kiev, 2015-2022',
   fontSize: 14,
   margin: [40, 40, 40, 0],
-  pageBreak: 'after',
 });
+
+const pageBreak = (s) => content.push({ text: '', pageBreak: `${s}` });
 
 const caption = (s) => {
   content.push({
@@ -91,10 +92,14 @@ const code = (src) => {
   });
 };
 
+pageBreak('before');
+
 const abstract = fs.readFileSync('content/Abstract.en.md', 'utf8');
 const text = abstract.replace('#', '').split('\n');
 caption(text.shift());
 para(text.join(' '));
+
+pageBreak('before');
 
 const src = fs.readFileSync('content/Index.en.md', 'utf8');
 const data = src.split('\n');
