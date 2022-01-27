@@ -41,7 +41,7 @@ content.push({
   margin: [40, 40, 40, 0],
 });
 
-const pageBreak = (s) => content.push({ text: '', pageBreak: `${s}` });
+const pageBreak = (s) => content.push({ text: '', pageBreak: s });
 
 const caption = (s) => {
   content.push({
