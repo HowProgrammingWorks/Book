@@ -23,9 +23,16 @@ const printer = new PdfPrinter(fonts);
 const content = [];
 
 content.push({
-  text: 'Multi-paradigm and\nMeta-programming in\nthe Software Engineering',
+  text: 'Metaprogramming',
   bold: true,
-  fontSize: 28,
+  fontSize: 30,
+  margin: [40, 20, 40, 0],
+});
+
+content.push({
+  text: 'Multi-paradigm approach in the Software Engineering',
+  bold: true,
+  fontSize: 14,
   margin: [40, 20, 40, 0],
 });
 
