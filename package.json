@@ -1,7 +1,7 @@
 {
-  "name": "book",
+  "name": "metaprogramming",
   "version": "1.0.0",
-  "description": "Multi-paradigm and Meta-programming in the Software Engineering",
+  "description": "Metaprogramming. Multi-paradigm approach in the Software Engineering.",
   "main": "build.js",
   "repository": {
     "type": "git",
