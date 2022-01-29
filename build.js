@@ -31,7 +31,7 @@ content.push({
 });
 
 content.push({
-  text: 'Multi-paradigm approach in the Software Engineering',
+  text: 'Multi-paradigm approach in the\nSoftware Engineering',
   bold: true,
   fontSize: 14,
   alignment: 'center',
@@ -39,14 +39,14 @@ content.push({
 });
 
 content.push({
-  text: 'Copyright © Timur Shemsedinov and \nHowProgrammingWorks contributors',
+  text: '© Timur Shemsedinov, Metarhia community',
   fontSize: 14,
   alignment: 'center',
   margin: [40, 60, 40, 0],
 });
 
 content.push({
-  text: 'Kiev, 2015-2022',
+  text: 'Kiev, 2015 — 2022',
   fontSize: 14,
   alignment: 'center',
   margin: [40, 40, 40, 0],
