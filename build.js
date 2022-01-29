@@ -25,7 +25,8 @@ const content = [];
 content.push({
   text: 'Metaprogramming',
   bold: true,
-  fontSize: 30,
+  fontSize: 28,
+  alignment: 'center',
   margin: [40, 20, 40, 0],
 });
 
@@ -33,18 +34,21 @@ content.push({
   text: 'Multi-paradigm approach in the Software Engineering',
   bold: true,
   fontSize: 14,
+  alignment: 'center',
   margin: [40, 20, 40, 0],
 });
 
 content.push({
   text: 'Copyright © Timur Shemsedinov and \nHowProgrammingWorks contributors',
   fontSize: 14,
-  margin: [40, 40, 40, 0],
+  alignment: 'center',
+  margin: [40, 60, 40, 0],
 });
 
 content.push({
   text: 'Kiev, 2015-2022',
   fontSize: 14,
+  alignment: 'center',
   margin: [40, 40, 40, 0],
 });
 
