@@ -1,84 +1,33 @@
 'use strict';
 
+const now = new Date();
+
 const fs = require('fs');
 const PdfPrinter = require('pdfmake');
+const config = require('./content/Book.js');
+const languages = Object.keys(config.languages);
 
-const fonts = {
-  Roboto: {
-    normal: 'fonts/Roboto-Regular.ttf',
-    bold: 'fonts/Roboto-Medium.ttf',
-    italics: 'fonts/Roboto-Italic.ttf',
-    bolditalics: 'fonts/Roboto-MediumItalic.ttf',
-  },
-  Mono: {
-    normal: 'fonts/RobotoMono-Regular.ttf',
-    bold: 'fonts/RobotoMono-Medium.ttf',
-    italics: 'fonts/RobotoMono-Italic.ttf',
-    bolditalics: 'fonts/RobotoMono-MediumItalic.ttf',
-  },
-};
-
-const printer = new PdfPrinter(fonts);
-
+const printer = new PdfPrinter(config.fonts);
 const content = [];
+const lang = 'en';
 
-content.push({
-  text: 'Metaprogramming',
-  bold: true,
-  fontSize: 28,
-  alignment: 'center',
-  margin: [40, 20, 40, 0],
-});
+const front = config.languages[lang];
 
-content.push({
-  text: 'Multi-paradigm approach in the\nSoftware Engineering',
-  bold: true,
-  fontSize: 14,
-  alignment: 'center',
-  margin: [40, 20, 40, 0],
-});
-
-content.push({
-  text: '© Timur Shemsedinov, Metarhia community',
-  fontSize: 14,
-  alignment: 'center',
-  margin: [40, 60, 40, 0],
-});
-
-content.push({
-  text: 'Kiev, 2015 — 2022',
-  fontSize: 14,
-  alignment: 'center',
-  margin: [40, 40, 40, 0],
-});
-
-const pageBreak = (s) => content.push({ text: '', pageBreak: s });
+content.push({ text: front.title, ...config.title });
+content.push({ text: front.subtitle, ...config.subtitle });
+content.push({ text: front.copyright, ...config.copyright });
+content.push({ text: front.location, ...config.location });
 
 const caption = (s) => {
-  content.push({
-    text: s,
-    fontSize: 15,
-    bold: true,
-    margin: [30, 5, 30, 5],
-  });
+  content.push({ text: s, ...config.caption });
 };
 
 const index = (s) => {
-  content.push({
-    text: s,
-    fontSize: 12,
-    margin: [30, 2, 30, 2],
-    preserveLeadingSpaces: true,
-  });
+  content.push({ text: s, ...config.index });
 };
 
 const para = (s) => {
-  content.push({
-    text: s,
-    fontSize: 12,
-    alignment: 'justify',
-    margin: [30, 5, 30, 5],
-  });
+  content.push({ text: s, ...config.para });
 };
 
 const code = (src) => {
@@ -94,37 +43,32 @@ const code = (src) => {
         ],
       ],
     },
-    border: false,
-    layout: 'noBorders',
-    fontSize: 12,
-    color: '#555',
-    fillColor: '#EEE',
-    font: 'Mono',
+    ...config.code,
   });
 };
 
-pageBreak('before');
-
-const abstract = fs.readFileSync('content/Abstract.en.md', 'utf8');
-const text = abstract.replace('#', '').split('\n');
-caption(text.shift());
-para(text.join(' '));
-
-pageBreak('before');
-
-const src = fs.readFileSync('content/Index.en.md', 'utf8');
-const data = src.split('\n');
-
-for (let i = 0; i < data.length; i++) {
-  const row = data[i];
-  if (row.startsWith('#')) {
-    const text = row.replace('#', '');
-    caption(text);
-  } else if (row.includes('. ')) {
-    index(row);
-  } else {
-    para(row);
+const section = (name) => {
+  content.push({ text: '', pageBreak: 'before' });
+  const src = fs.readFileSync(`content/${name}.${lang}.md`, 'utf8');
+  const rows = src.split('\n');
+  let lines = [];
+  for (const row of rows) {
+    if (row.startsWith('#')) {
+      const text = row.replace('#', '');
+      caption(text);
+    } else if (row.trim().substring(0, 3).includes('.')) {
+      index(row);
+    } else if (row === '') {
+      para(lines.join(' '));
+      lines = [];
+    } else {
+      lines.push(row);
+    }
   }
+};
+
+for (const name of config.sections) {
+  section(name);
 }
 
 /*
@@ -136,8 +80,6 @@ code(`const id = (x) => x;
 const res = id(5);
 console.log({ res });`);
 */
-
-const now = new Date();
 
 const book = printer.createPdfKitDocument({
   content,
