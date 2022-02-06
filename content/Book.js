@@ -3,6 +3,7 @@ module.exports = {
   languages: {
     en: require('./Book.en.js'),
     ru: require('./Book.ru.js'),
+    cz: require('./Book.cz.js'),
   },
   title: {
     bold: true,
