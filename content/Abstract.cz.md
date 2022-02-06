@@ -1,1 +1,21 @@
 # Anotace
+
+Všechny programy jsou data. Některá data jsou interpretována jako hodnoty, jiná
+jako typy těchto hodnot a další jako instrukce pro zpracování prvních dvou.
+Jakákoli paradigmata a programovací techniky jsou jen způsobem, jak vytvořit
+metadata, která dávají pravidla a posloupnost toku zpracování jiných dat.
+Multiparadigmatické programování bere to nejlepší ze všech paradigmat a
+sestavuje z něj syntaktické konstrukce, které umožňují popsat předmětnou oblast
+jasněji a pohodlněji. Vysokoúrovňové DSL (doménové jazyky) promítáme do
+nízkoúrovňových strojových instrukcí prostřednictvím mnoha vrstev abstrakcí. Zde
+je důležité reprezentovat úkol co nejúčinnějším způsobem pro zpracování na
+úrovni stroje, nikoli fanaticky následovat jedno paradigma. Nejúčinnější je ten,
+který s menším počtem vrstev a závislostí, nejlépe čitelný, udržovatelný a
+upravitelný pro člověka, který zajišťuje spolehlivost kódu a testovatelnost,
+rozšiřitelnost, opětovnou použitelnost, jasnost a flexibilitu konstrukcí metadat
+na každé úrovni. Věříme, že takový přístup nám umožní získat jak rychlé první
+výsledky ve vývoji, tak i neztrácet výkon při velkém toku změn ve fázích, kdy
+projekt již dosáhl vysoké zralosti a složitosti. Pokusíme se zvážit techniky a
+principy programování z různých paradigmat prizmatem metaprogramování a změnit
+tím, ne-li samotné softwarové inženýrství, ale alespoň jeho chápání novými
+generacemi inženýrů.
