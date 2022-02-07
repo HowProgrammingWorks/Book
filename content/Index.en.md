@@ -15,7 +15,7 @@
    2.4. Operator and expression, code block, function, loop, condition  
    2.5. Procedural paradigm, call, stack and heap  
    2.6. Higher-order function, pure function, side effects  
-   2.7. Closures, callbacks, wrappers, and events  
+   2.7. Closures, callbacks, wrappers and events  
    2.8. Exceptions and error handling  
    2.9. Monomorphic code in dynamic languages
 3. Application state, data structures and collections  
@@ -30,7 +30,7 @@
 4. Extended concepts  
    4.1. What is a technology stack  
    4.2. Development environment and debugging  
-   4.3. Iterations: recursion, iterators, and generators  
+   4.3. Iterations: recursion, iterators and generators  
    4.4. Application building blocks: files, modules, components  
    4.5. Object, prototype and class  
    4.6. Partial application and currying, pipe and compose  
