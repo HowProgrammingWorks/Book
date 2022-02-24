@@ -12,5 +12,4 @@ assignees: ''
 
 **Screenshots** If applicable, add screenshots to help explain your problem.
 
-**Add references** If you have references to other books, articles, videos, or
-even posts somewhere please add URLs here.
+**Add references** If you have references to other books, articles, videos, or even posts somewhere please add URLs here.
