@@ -8,6 +8,9 @@ const config = require('./content/Book.js');
 const languages = Object.keys(config.languages);
 const printer = new PdfPrinter(config.fonts);
 
+const BLOCK_TEXT = 1;
+const BLOCK_CODE = 2;
+
 const generate = (lang) => {
   const content = [];
   const front = config.languages[lang];
@@ -50,16 +53,28 @@ const generate = (lang) => {
     content.push({ text: '', pageBreak: 'before' });
     const src = fs.readFileSync(`content/${name}.${lang}.md`, 'utf8');
     const rows = src.split('\n');
+    let block = BLOCK_TEXT;
     let lines = [];
     for (const row of rows) {
       if (row.startsWith('#')) {
         const text = row.replace(/#/g, '');
         caption(text);
+      } else if (row.startsWith('```')) {
+        if (block === BLOCK_TEXT) {
+          lines = [];
+          block = BLOCK_CODE;
+        } else if (block === BLOCK_CODE) {
+          code(lines.join('\n'));
+          lines = [];
+          block = BLOCK_TEXT;
+        }
       } else if (row.trim().substring(0, 3).includes('.')) {
         index(row);
       } else if (row === '') {
-        para(lines.join(' '));
-        lines = [];
+        if (block === BLOCK_TEXT) {
+          para(lines.join(' '));
+          lines = [];
+        }
       } else {
         lines.push(row);
       }
@@ -69,16 +84,6 @@ const generate = (lang) => {
   for (const name of config.sections) {
     section(name);
   }
-
-  /*
-  para('Consider following:');
-  code(`const id = (x) => x;
-
-  // Usage
-
-  const res = id(5);
-  console.log({ res });`);
-  */
 
   const book = printer.createPdfKitDocument({
     content,
