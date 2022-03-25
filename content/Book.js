@@ -4,6 +4,7 @@ module.exports = {
     en: require('./Book.en.js'),
     ru: require('./Book.ru.js'),
     cz: require('./Book.cz.js'),
+    uk: require('./Book.uk.js'),
   },
   title: {
     bold: true,
