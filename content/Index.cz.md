@@ -15,7 +15,8 @@
    2.5. Procedurální paradigma, volání, zásobník a halda  
    2.6. Funkce vyššího řádu, čistá funkce, vedlejší účinky  
    2.7. Uzávěry, funkce zpětného volání, zabalení a události  
-   2.8. Výjimky a řešení chyb 2.9. Monomorfní kód v dynamických jazycích
+   2.8. Výjimky a řešení chyb  
+   2.9. Monomorfní kód v dynamických jazycích
 3. Stav aplikace, datové struktury a kolekce  
    3.1. Stavové a bezstavové přístupy (stateful and stateless)  
    3.2. Struktury a záznamy  
