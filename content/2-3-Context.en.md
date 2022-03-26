@@ -1,1 +1,1 @@
-# 2.3. Contexts and lexical scope
+## 2.3. Contexts and lexical scope
