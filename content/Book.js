@@ -1,10 +1,21 @@
 module.exports = {
-  sections: ['Abstract', 'Index', 'Introduction'],
+  sections: [
+    'Abstract',
+    'Index',
+    '1-Introduction',
+    '1-1-Approach',
+    '1-2-Examples',
+    '1-3-Modeling',
+    '1-4-Program',
+    '1-5-Decomposition',
+    '1-6-Engineer',
+    '1-7-Paradigms',
+  ],
   languages: {
-    en: require('./Book.en.js'),
-    ru: require('./Book.ru.js'),
-    cz: require('./Book.cz.js'),
-    uk: require('./Book.uk.js'),
+    en: require('./en/Book.js'),
+    ru: require('./ru/Book.js'),
+    cz: require('./cz/Book.js'),
+    uk: require('./uk/Book.js'),
   },
   title: {
     bold: true,
