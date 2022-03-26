@@ -51,7 +51,7 @@ const generate = (lang) => {
 
   const section = (name) => {
     content.push({ text: '', pageBreak: 'before' });
-    const src = fs.readFileSync(`content/${name}.${lang}.md`, 'utf8');
+    const src = fs.readFileSync(`content/${lang}/${name}.md`, 'utf8');
     const rows = src.split('\n');
     let block = BLOCK_TEXT;
     let lines = [];
