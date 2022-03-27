@@ -4,7 +4,7 @@ const now = new Date();
 
 const fs = require('fs');
 const PdfPrinter = require('pdfmake');
-const config = require('./content/Book.js');
+const config = require('./config.js');
 const languages = Object.keys(config.languages);
 const printer = new PdfPrinter(config.fonts);
 
@@ -21,7 +21,9 @@ const generate = (lang) => {
   content.push({ text: front.location, ...config.location });
 
   const caption = (s) => {
-    content.push({ text: s, ...config.caption });
+    const text = s.replace(/#/g, '');
+    const page = s.startsWith('# ') ? { pageBreak: 'before' } : {};
+    content.push({ text, ...config.caption, ...page });
   };
 
   const index = (s) => {
@@ -50,15 +52,13 @@ const generate = (lang) => {
   };
 
   const section = (name) => {
-    content.push({ text: '', pageBreak: 'before' });
     const src = fs.readFileSync(`content/${lang}/${name}.md`, 'utf8');
     const rows = src.split('\n');
     let block = BLOCK_TEXT;
     let lines = [];
     for (const row of rows) {
       if (row.startsWith('#')) {
-        const text = row.replace(/#/g, '');
-        caption(text);
+        caption(row);
       } else if (row.startsWith('```')) {
         if (block === BLOCK_TEXT) {
           lines = [];

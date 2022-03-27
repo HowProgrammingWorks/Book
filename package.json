@@ -18,7 +18,7 @@
     "url": "https://www.patreon.com/tshemsedinov"
   },
   "scripts": {
-    "build": "npm run format && node build.js",
+    "build": "npm run format && node content/build.js",
     "format": "prettier --write \"**/*.js\" \"**/*.json\" \"**/*.md\""
   },
   "dependencies": {
