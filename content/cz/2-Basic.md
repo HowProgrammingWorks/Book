@@ -1,1 +1,3 @@
-## 2. Základní pojmy
+# 2. Základní pojmy
+
+No translation
