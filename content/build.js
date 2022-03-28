@@ -43,6 +43,7 @@ const generate = (lang) => {
             {
               margin: [30, 5, 30, 5],
               text: src,
+              preserveLeadingSpaces: true,
             },
           ],
         ],
@@ -57,7 +58,7 @@ const generate = (lang) => {
     let block = BLOCK_TEXT;
     let lines = [];
     for (const row of rows) {
-      if (row.startsWith('#')) {
+      if (block === BLOCK_TEXT && row.startsWith('#')) {
         caption(row);
       } else if (row.startsWith('```')) {
         if (block === BLOCK_TEXT) {
@@ -70,11 +71,9 @@ const generate = (lang) => {
         }
       } else if (row.trim().substring(0, 3).includes('.')) {
         index(row);
-      } else if (row === '') {
-        if (block === BLOCK_TEXT) {
-          para(lines.join(' '));
-          lines = [];
-        }
+      } else if (block === BLOCK_TEXT && row === '') {
+        para(lines.join(' '));
+        lines = [];
       } else {
         lines.push(row);
       }
