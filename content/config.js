@@ -75,7 +75,7 @@ module.exports = {
   quote: {
     border: false,
     layout: 'noBorders',
-    fontSize: 11,
+    fontSize: 13,
     color: '#000',
     fillColor: '#bbb',
   },
