@@ -19,7 +19,6 @@ class Styles {
         const styles = {};
         for (const declaration of declarations) {
           const { property, value } = declaration;
-          console.dir({ property, value });
           if (
             ['font-weight', 'font-style'].some((e) => e === property) &&
             ['bold', 'italic'].some((e) => e === value)
@@ -90,12 +89,97 @@ class PDFRenderer extends Styles {
 }
 
 class TokenTree {
-  constructor() {}
+  constructor() {
+    this.rootNode = { children: [] };
+    this.stack = [this.rootNode];
+  }
+
+  get top() {
+    return this.stack[this.stack.length - 1];
+  }
+
+  get root() { return this.rootNode; }
+
+  add(node) {
+    this.top.children.push(node);
+  }
+
+  openNode(kind) {
+    const node = { kind, children: [] };
+    this.add(node);
+    this.stack.push(node);
+  }
+
+  closeNode() {
+    if (this.stack.length > 1) {
+      return this.stack.pop();
+    }
+    return undefined;
+  }
+
+  closeAllNodes() {
+    while (this.closeNode());
+  }
+
+  toJSON() {
+    return JSON.stringify(this.rootNode, null, 4);
+  }
+
+  walk(builder) {
+    return this.constructor._walk(builder, this.rootNode);
+  }
+
+  static _walk(builder, node) {
+    if (typeof node === 'string') {
+      builder.addText(node);
+    } else if (node.children) {
+      builder.openNode(node);
+      node.children.forEach((child) => this._walk(builder, child));
+      builder.closeNode(node);
+    }
+    return builder;
+  }
+
+  static _collapse(node) {
+    if (typeof node === 'string') return;
+    if (!node.children) return;
+
+    if (node.children.every((el) => typeof el === 'string')) {
+      // node.text = node.children.join("");
+      // delete node.children;
+      node.children = [node.children.join('')];
+    } else {
+      node.children.forEach((child) => {
+        TokenTree._collapse(child);
+      });
+    }
+  }
 }
 
 class TokenTreeEmitter extends TokenTree {
-  constructor() {
+  constructor(options) {
     super();
+    this.options = options;
+  }
+
+  addKeyword(text, kind) {
+    if (text === '') { return; }
+
+    this.openNode(kind);
+    this.addText(text);
+    this.closeNode();
+  }
+
+  addText(text) {
+    if (text === '') { return; }
+    this.add(text);
+  }
+
+  addSublanguage(emitter, name) {
+    const node = emitter.root;
+    node.kind = name;
+    node.sublanguage = true;
+    this.add(node);
   }
 
   toHTML() {
@@ -105,6 +189,10 @@ class TokenTreeEmitter extends TokenTree {
   toPDF() {
     const renderer = new PDFRenderer(this, this.options);
     return renderer.value();
+  }
+
+  finalize() {
+    return true;
   }
 }
 
