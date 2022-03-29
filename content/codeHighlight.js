@@ -44,11 +44,48 @@ class Styles {
       }
     }
   }
+
+  findColor(scope) {
+    if (!(scope in this.css)) {
+      return {};
+    }
+    return this.css[scope];
+  }
 }
 
+const emitsWrappingTags = (node) => !!node.kind;
+
 class PDFRenderer extends Styles {
-  constructor() {
+  constructor(parseTree, options) {
     super();
+    this.buffer = [];
+    this.classPrefix = options.classPrefix;
+    parseTree.walk(this);
+  }
+
+  addText(text) {
+    const lastIndex = this.buffer.length - 1;
+    const last = this.buffer[lastIndex];
+    if (typeof last === 'object') {
+      last.text = text;
+      this.buffer.splice(lastIndex, 1, last);
+    } else {
+      this.buffer.push(text);
+    }
+  }
+
+  openNode(node) {
+    if (!emitsWrappingTags(node)) return;
+    const scope = node.kind.includes('.') ? node.kind.split('.')[0] : node.kind;
+    this.buffer.push(this.findColor(`.${this.classPrefix}${scope}`));
+  }
+
+  closeNode() {
+    this.buffer.push('');
+  }
+
+  value() {
+    return this.buffer;
   }
 }
 
