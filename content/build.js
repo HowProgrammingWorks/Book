@@ -34,21 +34,24 @@ const generate = (lang) => {
     content.push({ text: s, ...config.para });
   };
 
-  const code = (src) => {
+  const code = (text) => {
     content.push({
       table: {
         widths: ['*'],
-        body: [
-          [
-            {
-              margin: [30, 5, 30, 5],
-              text: src,
-              preserveLeadingSpaces: true,
-            },
-          ],
-        ],
+        body: [[{ margin: [30, 5, 30, 5], text, preserveLeadingSpaces: true }]],
       },
       ...config.code,
+    });
+  };
+
+  const quote = (s) => {
+    const text = s.replace('> ', '');
+    content.push({
+      table: {
+        widths: ['*'],
+        body: [[{ margin: [30, 5, 30, 5], text }]],
+      },
+      ...config.quote,
     });
   };
 
@@ -60,6 +63,8 @@ const generate = (lang) => {
     for (const row of rows) {
       if (block === BLOCK_TEXT && row.startsWith('#')) {
         caption(row);
+      } else if (block === BLOCK_TEXT && row.startsWith('>')) {
+        quote(row);
       } else if (row.startsWith('```')) {
         if (block === BLOCK_TEXT) {
           lines = [];
