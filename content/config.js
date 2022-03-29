@@ -10,6 +10,16 @@ module.exports = {
     '1-5-Decomposition',
     '1-6-Engineer',
     '1-7-Paradigms',
+    '2-Basic',
+    '2-1-Identifiers',
+    '2-2-Types',
+    '2-3-Context',
+    '2-4-Blocks',
+    '2-5-Procedure',
+    '2-6-Function',
+    '2-7-Closure',
+    '2-8-Errors',
+    '2-9-Monomorphic',
   ],
   languages: {
     en: require('./en/Book.js'),
@@ -59,8 +69,15 @@ module.exports = {
     layout: 'noBorders',
     fontSize: 11,
     color: '#555',
-    fillColor: '#EEE',
+    fillColor: '#eee',
     font: 'Mono',
+  },
+  quote: {
+    border: false,
+    layout: 'noBorders',
+    fontSize: 11,
+    color: '#000',
+    fillColor: '#bbb',
   },
   fonts: {
     Roboto: {
