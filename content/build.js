@@ -31,7 +31,11 @@ const generate = (lang) => {
   };
 
   const para = (s) => {
-    content.push({ text: s, ...config.para });
+    const sections = s.split('`').map((text, i) => {
+      const style = i % 2 === 0 ? 'normal' : 'bold';
+      return { text, style, alignment: 'justify' };
+    });
+    content.push({ text: sections, ...config.index });
   };
 
   const code = (text) => {
@@ -97,6 +101,10 @@ const generate = (lang) => {
       text: currentPage.toString(),
       alignment: 'center',
     }),
+    styles: {
+      normal: {},
+      bold: { bold: true },
+    },
   });
 
   book.pipe(fs.createWriteStream(`release/Metaprogramming-${lang}.pdf`));
