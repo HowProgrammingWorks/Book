@@ -65,6 +65,7 @@ const generate = (lang) => {
     let block = BLOCK_TEXT;
     let lines = [];
     for (const row of rows) {
+      const numbering = row.trim().substring(0, 3).includes('.');
       if (block === BLOCK_TEXT && row.startsWith('#')) {
         caption(row);
       } else if (block === BLOCK_TEXT && row.startsWith('>')) {
@@ -78,7 +79,7 @@ const generate = (lang) => {
           lines = [];
           block = BLOCK_TEXT;
         }
-      } else if (row.trim().substring(0, 3).includes('.')) {
+      } else if (block === BLOCK_TEXT && numbering) {
         index(row);
       } else if (block === BLOCK_TEXT && row === '') {
         para(lines.join(' '));
