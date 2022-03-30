@@ -18,16 +18,16 @@
     "url": "https://www.patreon.com/tshemsedinov"
   },
   "scripts": {
-    "build": "npm run format && node build.js",
+    "build": "npm run format && node content/build.js",
     "format": "prettier --write \"**/*.js\" \"**/*.json\" \"**/*.md\""
   },
   "dependencies": {
-    "pdfmake": "^0.1.72",
-    "eslint": "^7.31.0",
+    "eslint": "^8.12.0",
     "eslint-config-metarhia": "^7.0.1",
-    "eslint-config-prettier": "^8.3.0",
+    "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-import": "^2.25.4",
     "eslint-plugin-prettier": "^4.0.0",
-    "prettier": "^2.5.1"
+    "pdfmake": "^0.2.4",
+    "prettier": "^2.6.1"
   }
 }

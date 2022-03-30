@@ -76,7 +76,7 @@
    9.4. Interaction with calls and callbacks  
    9.5. Interaction with events and messages  
    9.6. Interfaces, protocols and contracts  
-   6.7. Onion aka multi-layer approach
+   9.7. Onion aka multi-layer approach
 10. Concurrent computing basics  
     10.1. Asynchronous programming  
     10.2. Parallel programming, shared memory and sync primitives  
