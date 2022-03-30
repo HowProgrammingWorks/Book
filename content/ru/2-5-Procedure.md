@@ -23,8 +23,6 @@
 ```
 
 ```js
-// Functions
-
 const colorer = (s, color) => `\x1b[3${color}m${s}\x1b[0m`;
 
 const colorize = (name) => {
