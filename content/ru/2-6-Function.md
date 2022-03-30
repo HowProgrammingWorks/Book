@@ -1,16 +1,44 @@
 ## 2.6. Функция высшего порядка, чистая функция, побочные эффекты
 
-Объявление функции (Function definition) — в `JavaScript` это способ объявления функции, который виден из любого места в лексическом контексте, в котором объявлена функция, пример: `function sum(a, b) { return a + b; }`
+Объявление функции (Function definition) — в `JavaScript` это способ объявления функции, который виден из любого места в лексическом контексте, в котором объявлена функция, пример:
+
+```js
+function sum(a, b) {
+  return a + b;
+}
+```
 
 Функциональное выражение (Function expression) — связывание функции с идентификатором при помощи присвоения, при котором значение будет доступно через идентификатор не во всем лексическом контексте, а только после места присвоения. Имеет несколько синтаксических вариантов:
 
-Функциональное выражение с именованной функцией (Named function expression): `const max = function max(a, b) { return a + b; };`
+Функциональное выражение с именованной функцией (Named function expression):
 
-Анонимное функциональное выражение (Anonymous function expression): `const max = function(a, b) { return a + b; };`
+```js
+const max = function max(a, b) {
+  return a + b;
+};
+```
 
-Стрелочная или лямбда-функция (Arrow, Lambda function): `const max = (a, b) => { return a + b; };`
+Анонимное функциональное выражение (Anonymous function expression):
 
-Лямбда-выражение, Функция-стрелка с выражением в качестве тела (Lambda expression, Arrow function): `const max = (a, b) => (a + b);`
+```js
+const max = function (a, b) {
+  return a + b;
+};
+```
+
+Стрелочная или лямбда-функция (Arrow, Lambda function):
+
+```js
+const max = (a, b) => {
+  return a + b;
+};
+```
+
+Лямбда-выражение, Функция-стрелка с выражением в качестве тела (Lambda expression, Arrow function):
+
+```js
+const max = (a, b) => a + b;
+```
 
 > Чистая функция (Pure Function) — детерминированная функция без побочных эфектов.
 
@@ -83,8 +111,8 @@ const result = curry((a, b, c) => a + b + c)(1, 2)(3);
 ```js
 const add = (a, b) => a + b;
 
-console.log('Add numbers: 5 + 2 = ' + add(5, 2));
-console.log('Add floats: 5.1 + 2.3 = ' + add(5.1, 2.3));
-console.log(`Concatenate: '5' + '2' = '${add('5', '2')}'`);
-console.log('Subtraction: 5 + (-2) = ' + add(5, -2));
+console.log(`Add nums:    ${add(5, 2)}`);
+console.log(`Add float:   ${add(5.1, 2.3)}`);
+console.log(`Concatenate: ${add('5', '2')}`);
+console.log(`Subtraction: ${add(5, -2)}`);
 ```
