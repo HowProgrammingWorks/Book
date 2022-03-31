@@ -67,7 +67,7 @@ class PDFRenderer {
     const lastIndex = this.buffer.length - 1;
     const last = this.buffer[lastIndex];
     if (typeof last === 'object') {
-      last.text = text;
+      last.text += text;
       this.buffer.splice(lastIndex, 1, last);
     } else {
       this.buffer.push(text);
@@ -108,7 +108,7 @@ class PDFRenderer {
     if (!(scope in this.css)) {
       return {};
     }
-    return Object.assign({}, this.css[scope]);
+    return Object.assign({ text: '' }, this.css[scope]);
   }
 }
 
