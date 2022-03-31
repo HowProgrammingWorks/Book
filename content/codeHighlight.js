@@ -228,4 +228,7 @@ class TokenTreeEmitter extends TokenTree {
 
 hljs.configure({ __emitter: TokenTreeEmitter, css: styles() });
 
-module.exports = (src) => hljs.highlightAuto(src).value;
+module.exports = (src, lang) => {
+  if (lang) return hljs.highlight(src, { language: lang }).value;
+  return hljs.highlightAuto(src).value;
+};

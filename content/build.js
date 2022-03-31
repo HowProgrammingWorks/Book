@@ -34,8 +34,8 @@ const generate = (lang) => {
     content.push({ text: s, ...config.para });
   };
 
-  const code = (text) => {
-    content.push(codeHighlight(text));
+  const code = (text, codeLang) => {
+    content.push(codeHighlight(text, codeLang));
   };
 
   const quote = (s) => {
@@ -54,6 +54,7 @@ const generate = (lang) => {
     const rows = src.split('\n');
     let block = BLOCK_TEXT;
     let lines = [];
+    let codeLang = undefined;
     for (const row of rows) {
       if (block === BLOCK_TEXT && row.startsWith('#')) {
         caption(row);
@@ -62,9 +63,11 @@ const generate = (lang) => {
       } else if (row.startsWith('```')) {
         if (block === BLOCK_TEXT) {
           lines = [];
+          codeLang = row.replace('```', '');
           block = BLOCK_CODE;
         } else if (block === BLOCK_CODE) {
-          code(lines.join('\n'));
+          code(lines.join('\n'), codeLang);
+          codeLang = undefined;
           lines = [];
           block = BLOCK_TEXT;
         }
