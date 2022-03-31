@@ -38,7 +38,9 @@ class Styles {
         }
 
         for (const selector of selectors) {
-          selector.split(' ').forEach((s) => { this.css[s] = styles; });
+          selector.split(' ').forEach((s) => {
+            this.css[s] = styles;
+          });
         }
       }
     }
@@ -48,7 +50,7 @@ class Styles {
     if (!(scope in this.css)) {
       return {};
     }
-    return this.css[scope];
+    return Object.assign({}, this.css[scope]);
   }
 }
 
@@ -98,7 +100,9 @@ class TokenTree {
     return this.stack[this.stack.length - 1];
   }
 
-  get root() { return this.rootNode; }
+  get root() {
+    return this.rootNode;
+  }
 
   add(node) {
     this.top.children.push(node);
@@ -163,7 +167,9 @@ class TokenTreeEmitter extends TokenTree {
   }
 
   addKeyword(text, kind) {
-    if (text === '') { return; }
+    if (text === '') {
+      return;
+    }
 
     this.openNode(kind);
     this.addText(text);
@@ -171,7 +177,9 @@ class TokenTreeEmitter extends TokenTree {
   }
 
   addText(text) {
-    if (text === '') { return; }
+    if (text === '') {
+      return;
+    }
     this.add(text);
   }
 

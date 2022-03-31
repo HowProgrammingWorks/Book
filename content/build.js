@@ -4,10 +4,10 @@ const now = new Date();
 
 const fs = require('fs');
 const PdfPrinter = require('pdfmake');
+const codeHighlight = require('./codeHighlight.js');
 const config = require('./config.js');
 const languages = Object.keys(config.languages);
 const printer = new PdfPrinter(config.fonts);
-
 const BLOCK_TEXT = 1;
 const BLOCK_CODE = 2;
 
@@ -38,7 +38,15 @@ const generate = (lang) => {
     content.push({
       table: {
         widths: ['*'],
-        body: [[{ margin: [30, 5, 30, 5], text, preserveLeadingSpaces: true }]],
+        body: [
+          [
+            {
+              margin: [30, 5, 30, 5],
+              text: codeHighlight(text),
+              preserveLeadingSpaces: true,
+            },
+          ],
+        ],
       },
       ...config.code,
     });
