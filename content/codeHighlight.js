@@ -3,11 +3,18 @@
 const hljs = require('highlight.js');
 const CSS = require('css');
 const fs = require('fs');
-
-const TEMP_PATH_STYLE = './node_modules/highlight.js/styles/atom-one-light.css';
+const config = require('./config.js');
 
 function styles() {
-  const content = fs.readFileSync(TEMP_PATH_STYLE).toString();
+  const styleFileName = config.code.highlightStyle
+    .replace(' / ', '/')
+    .replace(/\s(?!\d)/g, '-')
+    .replace(' ', '')
+    .toLowerCase();
+  const file = require
+    .resolve('highlight.js')
+    .replace('lib/index.js', `styles/${styleFileName}.css`);
+  const content = fs.readFileSync(file).toString();
   const parsed = CSS.parse(content, {});
   const stylesheet = parsed.stylesheet.rules;
   const css = {};
@@ -78,7 +85,21 @@ class PDFRenderer {
   }
 
   value() {
-    return this.buffer;
+    return {
+      table: {
+        widths: ['*'],
+        body: [
+          [
+            {
+              margin: [30, 5, 30, 5],
+              text: this.buffer,
+              preserveLeadingSpaces: true,
+            },
+          ],
+        ],
+      },
+      ...config.code.pdfStyle,
+    };
   }
 
   findColor(scope) {

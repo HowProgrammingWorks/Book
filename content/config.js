@@ -1,3 +1,5 @@
+'use strict';
+
 module.exports = {
   sections: [
     'Abstract',
@@ -65,12 +67,15 @@ module.exports = {
     margin: [30, 5, 30, 5],
   },
   code: {
-    border: false,
-    layout: 'noBorders',
-    fontSize: 11,
-    color: '#555',
-    fillColor: '#eee',
-    font: 'Mono',
+    highlightStyle: 'Paraiso Dark', // https://highlightjs.org/static/demo/
+    pdfStyle: {
+      border: false,
+      layout: 'noBorders',
+      fontSize: 11,
+      color: '#555',
+      fillColor: '#eee',
+      font: 'Mono',
+    },
   },
   quote: {
     border: false,

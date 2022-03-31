@@ -35,21 +35,7 @@ const generate = (lang) => {
   };
 
   const code = (text) => {
-    content.push({
-      table: {
-        widths: ['*'],
-        body: [
-          [
-            {
-              margin: [30, 5, 30, 5],
-              text: codeHighlight(text),
-              preserveLeadingSpaces: true,
-            },
-          ],
-        ],
-      },
-      ...config.code,
-    });
+    content.push(codeHighlight(text));
   };
 
   const quote = (s) => {
