@@ -1,64 +1,56 @@
 'use strict';
 
 const hljs = require('highlight.js');
-const css = require('css');
+const CSS = require('css');
 const fs = require('fs');
 
 const TEMP_PATH_STYLE = './node_modules/highlight.js/styles/atom-one-light.css';
 
-class Styles {
-  constructor() {
-    const content = fs.readFileSync(TEMP_PATH_STYLE).toString();
-    const parsed = css.parse(content, {});
-    const stylesheet = parsed.stylesheet.rules;
-    this.css = {};
-    for (const rule of stylesheet) {
-      const { type, selectors, declarations } = rule;
+function styles() {
+  const content = fs.readFileSync(TEMP_PATH_STYLE).toString();
+  const parsed = CSS.parse(content, {});
+  const stylesheet = parsed.stylesheet.rules;
+  const css = {};
+  for (const rule of stylesheet) {
+    const { type, selectors, declarations } = rule;
 
-      if (type === 'rule') {
-        const styles = {};
-        for (const declaration of declarations) {
-          const { property, value } = declaration;
-          if (
-            ['font-weight', 'font-style'].some((e) => e === property) &&
-            ['bold', 'italic'].some((e) => e === value)
-          ) {
-            styles[value] = true;
-          } else if (
-            property === 'text-decoration' &&
-            ['underline', 'lineThrough', 'overline'].some((e) => e === value)
-          ) {
-            styles.decoration = value;
-          } else if (
-            ['color', 'background'].some((e) => e === property) &&
-            ['url', 'rgb'].some((e) => !value.includes(e))
-          ) {
-            styles[property] = value;
-          }
+    if (type === 'rule') {
+      const styles = {};
+      for (const declaration of declarations) {
+        const { property, value } = declaration;
+        if (
+          ['font-weight', 'font-style'].some((e) => e === property) &&
+          ['bold', 'italic'].some((e) => e === value)
+        ) {
+          styles[value] = true;
+        } else if (
+          property === 'text-decoration' &&
+          ['underline', 'lineThrough', 'overline'].some((e) => e === value)
+        ) {
+          styles.decoration = value;
+        } else if (
+          ['color', 'background'].some((e) => e === property) &&
+          ['url', 'rgb'].some((e) => !value.includes(e))
+        ) {
+          styles[property] = value;
         }
+      }
 
-        for (const selector of selectors) {
-          selector.split(' ').forEach((s) => {
-            this.css[s] = styles;
-          });
-        }
+      for (const selector of selectors) {
+        selector.split(' ').forEach((s) => {
+          css[s] = styles;
+        });
       }
     }
   }
-
-  findColor(scope) {
-    if (!(scope in this.css)) {
-      return {};
-    }
-    return Object.assign({}, this.css[scope]);
-  }
+  return css;
 }
 
 const emitsWrappingTags = (node) => !!node.kind;
 
-class PDFRenderer extends Styles {
+class PDFRenderer {
   constructor(parseTree, options) {
-    super();
+    this.css = options.css;
     this.buffer = [];
     this.classPrefix = options.classPrefix;
     parseTree.walk(this);
@@ -87,6 +79,13 @@ class PDFRenderer extends Styles {
 
   value() {
     return this.buffer;
+  }
+
+  findColor(scope) {
+    if (!(scope in this.css)) {
+      return {};
+    }
+    return Object.assign({}, this.css[scope]);
   }
 }
 
@@ -204,6 +203,6 @@ class TokenTreeEmitter extends TokenTree {
   }
 }
 
-hljs.configure({ __emitter: TokenTreeEmitter });
+hljs.configure({ __emitter: TokenTreeEmitter, css: styles() });
 
 module.exports = (src) => hljs.highlightAuto(src).value;
