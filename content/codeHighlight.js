@@ -98,6 +98,8 @@ class PDFRenderer {
           ],
         ],
       },
+      color: this.css['.hljs'].color,
+      fillColor: this.css['.hljs'].background,
       ...config.code.pdfStyle,
     };
   }

@@ -72,8 +72,6 @@ module.exports = {
       border: false,
       layout: 'noBorders',
       fontSize: 11,
-      color: '#555',
-      fillColor: '#eee',
       font: 'Mono',
     },
   },
