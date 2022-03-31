@@ -67,7 +67,9 @@ module.exports = {
     margin: [30, 5, 30, 5],
   },
   code: {
-    highlightStyle: 'Paraiso Dark', // https://highlightjs.org/static/demo/
+    // You can find and select a style at https://highlightjs.org/static/demo/
+    // Base16 style not work
+    highlightStyle: 'Vs',
     pdfStyle: {
       border: false,
       layout: 'noBorders',
