@@ -62,7 +62,7 @@ module.exports = {
   para: {
     fontSize: 11,
     alignment: 'justify',
-    margin: [30, 5, 30, 5],
+    margin: [30, 0, 30, 10],
   },
   code: {
     border: false,
