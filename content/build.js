@@ -35,7 +35,7 @@ const generate = (lang) => {
       const style = i % 2 === 0 ? 'normal' : 'bold';
       return { text, style, alignment: 'justify' };
     });
-    content.push({ text: sections, ...config.index });
+    content.push({ text: sections, ...config.para });
   };
 
   const code = (text) => {
