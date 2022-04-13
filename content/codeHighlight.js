@@ -68,7 +68,6 @@ class PDFRenderer {
     const last = this.buffer[lastIndex];
     if (typeof last === 'object') {
       last.text += text;
-      this.buffer.splice(lastIndex, 1, last);
     } else {
       this.buffer.push(text);
     }
@@ -106,7 +105,7 @@ class PDFRenderer {
 
   findColor(scope) {
     if (!(scope in this.css)) {
-      return {};
+      return { text: '' };
     }
     return Object.assign({ text: '' }, this.css[scope]);
   }
