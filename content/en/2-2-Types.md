@@ -29,7 +29,7 @@ Scalar values ​​are combined into one in such a way, that a set of operation
 
 > Flag — a boolean value that determines the state of something.
 
-For example: a status of closing a connection, a status of completion of a search by data structure, etc. 
+For example: a status of a closed connection, a status of completion of a search over data structure, etc.
 
 ```js
 let flagName = false;
