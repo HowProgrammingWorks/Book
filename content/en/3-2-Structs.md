@@ -25,7 +25,8 @@ int main() {
 
   printf(
     "Name: %s\nCity: %s\nBorn: %d-%d-%d\n",
-    p1.name, p1.city, p1.born.year, p1.born.month, p1.born.day
+    p1.name, p1.city,
+    p1.born.year, p1.born.month, p1.born.day
   );
 
   return 0;
@@ -61,7 +62,12 @@ begin
   P1.Born.Year := 121;
   WriteLn('Name: ', P1.Name);
   WriteLn('City: ', P1.City);
-  WriteLn('Born: ', P1.Born.Year, '-', P1.Born.Month, '-', P1.Born.Day);
+  WriteLn(
+    'Born: ',
+    P1.Born.Year, '-',
+    P1.Born.Month, '-',
+    P1.Born.Day
+  );
   Assign(FPerson, './record.dat');
   Rewrite(FPerson);
   Write(FPerson, P1);
@@ -97,7 +103,8 @@ fn main() {
 
     println!(
         "Name: {}\nCity: {}\nBorn: {}-{}-{}\n",
-        p1.name, p1.city, p1.born.year, p1.born.month, p1.born.day
+        p1.name, p1.city,
+        p1.born.year, p1.born.month, p1.born.day
     );
 }
 ```
@@ -116,10 +123,23 @@ interface IPerson {
   city: string;
   born: IDate;
 }
+```
 
-// Usage
+```ts
+const personToString = (person: IPerson): string => {
+  const { name, city, born } = person;
+  const { year, month, day } = born;
+  const fields = [
+    `Name: ${name}`,
+    `City: ${city}`,
+    `Born: ${year}-${month}-${day}`,
+  ];
+  return fields.join('\n');
+};
+```
 
-const p1: IPerson = {
+```ts
+const person: IPerson = {
   name: 'Marcus',
   city: 'Roma',
   born: {
@@ -129,8 +149,7 @@ const p1: IPerson = {
   },
 };
 
-const date = `${p1.born.year}-${p1.born.month}-${p1.born.day}`;
-console.log(`Name: ${p1.name}\nCity: ${p1.city}\nBorn: ${date}\n`);
+console.log(personToString(person));
 ```
 
 > TypeScript: Classes
@@ -147,28 +166,11 @@ class Person {
   city: string;
   born: DateStruct;
 }
-
-// Usage
-
-const p1: Person = {
-  name: 'Marcus',
-  city: 'Roma',
-  born: {
-    day: 26,
-    month: 4,
-    year: 121,
-  },
-};
-
-const date = `${p1.born.year}-${p1.born.month}-${p1.born.day}`;
-console.log(`Name: ${p1.name}\nCity: ${p1.city}\nBorn: ${date}\n`);
 ```
 
 > JavaScript: Classes
 
 ```js
-'use strict';
-
 class DateStruct {
   constructor(year, month, day) {
     this.day = day;
@@ -184,21 +186,31 @@ class Person {
     this.born = born;
   }
 }
+```
 
-// Usage
+```js
+const personToString = (person) => {
+  const { name, city, born } = person;
+  const { year, month, day } = born;
+  const fields = [
+    `Name: ${name}`,
+    `City: ${city}`,
+    `Born: ${year}-${month}-${day}`,
+  ];
+  return fields.join('\n');
+};
+```
 
-const p1 = new Person('Marcus', 'Roma', new DateStruct(121, 4, 26));
-
-const date = `${p1.born.year}-${p1.born.month}-${p1.born.day}`;
-console.log(`Name: ${p1.name}\nCity: ${p1.city}\nBorn: ${date}\n`);
+```js
+const date = new DateStruct(121, 4, 26);
+const person = new Person('Marcus', 'Roma', date);
+console.log(personToString(person));
 ```
 
 > JavaScrip: Objects
 
 ```js
-'use strict';
-
-const p1 = {
+const person = {
   name: 'Marcus',
   city: 'Roma',
   born: {
@@ -208,39 +220,26 @@ const p1 = {
   },
 };
 
-const date = `${p1.born.year}-${p1.born.month}-${p1.born.day}`;
-console.log(`Name: ${p1.name}\nCity: ${p1.city}\nBorn: ${date}\n`);
+console.log(personToString(person));
 ```
 
 > JavaScrit: strucute serialization
 
 ```js
-'use strict';
-
 const v8 = require('v8');
 const fs = require('fs');
+```
 
-class DateStruct {
-  constructor(year, month, day) {
-    this.day = day;
-    this.month = month;
-    this.year = year;
-  }
-}
+Take from previous example:
 
-class Person {
-  constructor(name, city, born) {
-    this.name = name;
-    this.city = city;
-    this.born = born;
-  }
-}
+- class DateStruct
+- class Person
 
-// Usage
+```js
+const date = new DateStruct(121, 4, 26);
+const person = new Person('Marcus', 'Roma', date);
 
-const p1 = new Person('Marcus', 'Roma', new DateStruct(121, 4, 26));
-
-const v8Data = v8.serialize(p1);
+const v8Data = v8.serialize(person);
 const v8File = './file.dat';
 fs.writeFile(v8File, v8Data, () => {
   console.log('Saved ' + v8File);
@@ -250,11 +249,11 @@ fs.writeFile(v8File, v8Data, () => {
 > File: file.dat
 
 ```
-| 00000000 | FF 0D 6F 22 | 04 6E 61 6D | 65 22 06 4D | 61 72 63 75 |
-| 00000010 | 73 22 04 63 | 69 74 79 22 | 04 52 6F 6D | 61 22 04 62 |
-| 00000020 | 6F 72 6E 6F | 22 03 64 61 | 79 49 34 22 | 05 6D 6F 6E |
-| 00000030 | 74 68 49 08 | 22 04 79 65 | 61 72 49 F2 | 01 7B 03 7B |
-| 00000040 | 03          |             |             |             |
+FF 0D 6F 22 04 6E 61 6D 65 22 06 4D 61 72 63 75
+73 22 04 63 69 74 79 22 04 52 6F 6D 61 22 04 62
+6F 72 6E 6F 22 03 64 61 79 49 34 22 05 6D 6F 6E
+74 68 49 08 22 04 79 65 61 72 49 F2 01 7B 03 7B
+03
 ```
 
 > Nested structures
