@@ -3,8 +3,10 @@
 > Throw
 
 ```js
+const isNumber = (value) => typeof value === 'number';
+
 const sum = (a, b) => {
-  if (typeof a === 'number' && typeof b === 'number') {
+  if (isNumber(a) && isNumber(b)) {
     return a + b;
   }
   throw new Error('a and b should be numbers');
@@ -31,7 +33,7 @@ try {
 
 ```js
 const sum = (a, b) => {
-  if (typeof a === 'number' && typeof b === 'number') {
+  if (isNumber(a) && isNumber(b)) {
     return [null, a + b];
   }
   return [new Error('a and b should be numbers')];
@@ -46,7 +48,7 @@ console.log(sum(7, 'A'));
 
 ```js
 const sum = (a, b, callback) => {
-  if (typeof a === 'number' && typeof b === 'number') {
+  if (isNumber(a) && isNumber(b)) {
     callback(null, a + b);
   } else {
     callback(new Error('a and b should be numbers'));
@@ -79,7 +81,7 @@ sum(7, 'A', (err, result) => {
 ```js
 const sum = (a, b) =>
   new Promise((resolve, reject) => {
-    if (typeof a === 'number' && typeof b === 'number') {
+    if (isNumber(a) && isNumber(b)) {
       resolve(a + b);
     } else {
       reject(new Error('a and b should be numbers'));
@@ -111,7 +113,7 @@ sum(7, 'A')
 
 ```js
 const sum = async (a, b) => {
-  if (typeof a === 'number' && typeof b === 'number') {
+  if (isNumber(a) && isNumber(b)) {
     return a + b;
   }
   throw new Error('a and b should be numbers');

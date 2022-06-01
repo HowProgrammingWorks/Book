@@ -52,18 +52,18 @@ console.log(res);
 > Abstraction (class sunstitution)
 
 ```js
+const COLORS = {
+  warning: '\x1b[1;33m',
+  error: '\x1b[0;31m',
+  info: '\x1b[1;37m',
+};
+
 const logger = (kind) => {
-  const color = logger.colors[kind] || logger.colors.info;
+  const color = COLORS[kind] || COLORS.info;
   return (s) => {
     const date = new Date().toISOString();
     console.log(color + date + '\t' + s);
   };
-};
-
-logger.colors = {
-  warning: '\x1b[1;33m',
-  error: '\x1b[0;31m',
-  info: '\x1b[1;37m',
 };
 ```
 
@@ -116,7 +116,10 @@ console.log(v);
 > Alternative syntax
 
 ```js
-const adder = (a) => ({ value: () => a, add: (b) => adder(a + b) });
+const adder = (a) => ({
+  value: () => a,
+  add: (b) => adder(a + b),
+});
 ```
 
 ```js
@@ -154,6 +157,7 @@ const a = adder(3)
   .add(12)
   .add(5)
   .value();
+
 console.log(a);
 ```
 
@@ -172,9 +176,11 @@ sum(5, 2, console.log.bind(null, 'sum(5, 2) ='));
 ```js
 const fs = require('fs');
 
-fs.readFile('./1-callback.js', 'utf8', (err, data) => {
+const reader = (err, data) => {
   console.log({ lines: data.split('\n').length });
-});
+};
+
+fs.readFile('./file.txt', 'utf8', reader);
 ```
 
 > Named collbacks
@@ -199,7 +205,9 @@ const fn = () => {
   console.log('Callback from from timer');
 };
 
-const timeout = (interval, fn) => setTimeout(fn, interval);
+const timeout = (interval, fn) => {
+  setTimeout(fn, interval);
+};
 
 timeout(5000, fn);
 ```
@@ -208,8 +216,10 @@ timeout(5000, fn);
 
 ```js
 const curry = (fn, ...par) => {
-  const curried = (...args) =>
-    fn.length > args.length ? curry(fn.bind(null, ...args)) : fn(...args);
+  const curried = (...args) => {
+    if (fn.length <= args.length) return fn(...args);
+    return curry(fn.bind(null, ...args));
+  };
   return par.length ? curried(...par) : curried;
 };
 ```
@@ -219,7 +229,9 @@ const fn = () => {
   console.log('Callback from from timer');
 };
 
-const timeout = (interval, fn) => setTimeout(fn, interval);
+const timeout = (interval, fn) => {
+  setTimeout(fn, interval);
+};
 
 const timer = curry(timeout);
 timer(2000)(fn);
