@@ -1,4 +1,4 @@
-## 3.2. Structs and records
+## 3.2. Struktury a záznamy
 
 ```c
 #include <stdio.h>

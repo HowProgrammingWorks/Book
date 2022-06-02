@@ -1,3 +1,3 @@
-## 3.3. Array, list, set, tuple
+## 3.3. Pole, seznam, sada, n-tice
 
 No translation

@@ -1,3 +1,3 @@
-## 3.1. Stateful and stateless approach
+## 3.1. Stavové a bezstavové přístupy (stateful and stateless)
 
 No translation

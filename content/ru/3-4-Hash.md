@@ -1,3 +1,3 @@
-## 3.4. Dictionary, hash table and associative array
+## 3.4. Словарь, хэш-таблица и ассоциативный массив
 
 No translation

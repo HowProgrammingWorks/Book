@@ -1,3 +1,3 @@
-## 3.1. Stateful and stateless approach
+## 3.1. Підходи до роботи зі станом: stateful and stateless
 
 No translation

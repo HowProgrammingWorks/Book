@@ -1,3 +1,3 @@
-## 3.6. Trees and Graphs
+## 3.6. Дерева та графи
 
 No translation
