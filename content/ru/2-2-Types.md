@@ -7,7 +7,13 @@
 > Типы данных (Data Types)
 
 ```js
-const values = [5, 'Kiev', true, { city: 'Beijing' }, (a) => ++a];
+const values = [
+  5,
+  'Kiev',
+  true,
+  { city: 'Beijing' },
+  (a) => ++a,
+];
 
 const types = values.map((x) => typeof x);
 console.log({ types });

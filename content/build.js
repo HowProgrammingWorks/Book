@@ -42,7 +42,15 @@ const generate = (lang) => {
     content.push({
       table: {
         widths: ['*'],
-        body: [[{ margin: [30, 5, 30, 5], text, preserveLeadingSpaces: true }]],
+        body: [
+          [
+            {
+              margin: [30, 5, 30, 5],
+              text,
+              preserveLeadingSpaces: true,
+            },
+          ],
+        ],
       },
       ...config.code,
     });

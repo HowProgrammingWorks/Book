@@ -49,7 +49,10 @@ const hash =
 > Superposition
 
 ```js
-const expr2 = add(pow(mul(5, 8), 2), div(inc(sqrt(20)), log(2, 7)));
+const expr2 = add(
+  pow(mul(5, 8), 2),
+  div(inc(sqrt(20)), log(2, 7))
+);
 ```
 
 > Composition
@@ -91,6 +94,8 @@ const add = (a, b) => a + b;
 
 console.log('Add numbers: 5 + 2 = ' + add(5, 2));
 console.log('Add floats: 5.1 + 2.3 = ' + add(5.1, 2.3));
-console.log(`Concatenate: '5' + '2' = '${add('5', '2')}'`);
+console.log(
+  `Concatenate: '5' + '2' = '${add('5', '2')}'`
+);
 console.log('Subtraction: 5 + (-2) = ' + add(5, -2));
 ```
