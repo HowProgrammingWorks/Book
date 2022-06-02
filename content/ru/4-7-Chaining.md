@@ -1,3 +1,3 @@
-## 4.7. Chaining for methods and functions
+## 4.7. Чеининг для методов и функций
 
 No translation

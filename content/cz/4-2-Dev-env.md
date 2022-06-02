@@ -1,3 +1,3 @@
-## 4.2. Development environment and debugging
+## 4.2. Vývojové prostředí a ladění
 
 No translation

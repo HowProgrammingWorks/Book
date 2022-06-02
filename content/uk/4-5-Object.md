@@ -1,3 +1,3 @@
-## 4.5. Object, prototype and class
+## 4.5. Об'єкт, прототип та клас
 
 No translation

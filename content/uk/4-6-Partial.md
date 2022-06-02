@@ -1,3 +1,3 @@
-## 4.6. Partial application and currying, pipe and compose
+## 4.6. Часткове застосування та каррування, композиція функцій
 
 No translation

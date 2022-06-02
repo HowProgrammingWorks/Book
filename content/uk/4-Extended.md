@@ -1,3 +1,3 @@
-# 4. Extended concepts
+# 4. Розширені концепції
 
 No translation

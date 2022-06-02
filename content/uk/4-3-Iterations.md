@@ -1,3 +1,3 @@
-## 4.3. Iterations: recursion, iterators, and generators
+## 4.3. Ітерування: рекурсія, ітератори та генератори
 
 No translation

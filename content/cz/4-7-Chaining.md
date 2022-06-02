@@ -1,3 +1,3 @@
-## 4.7. Chaining for methods and functions
+## 4.7. Řetězení pro metody a funkce (chaining)
 
 No translation

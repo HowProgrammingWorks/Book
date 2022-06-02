@@ -1,3 +1,3 @@
-## 4.9. Dependencies and libraries
+## 4.9. Зависимости и библиотеки
 
 No translation

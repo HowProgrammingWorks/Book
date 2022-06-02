@@ -1,3 +1,3 @@
-## 4.1. What is a technology stack
+## 4.1. Що таке технологічний стек
 
 No translation

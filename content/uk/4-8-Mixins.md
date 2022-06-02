@@ -1,3 +1,3 @@
-## 4.8. Mixins
+## 4.8. Домішки (mixins)
 
 No translation

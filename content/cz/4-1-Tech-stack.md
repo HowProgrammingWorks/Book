@@ -1,3 +1,3 @@
-## 4.1. What is a technology stack
+## 4.1. Co je technologický stack
 
 No translation

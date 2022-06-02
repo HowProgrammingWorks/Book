@@ -1,3 +1,3 @@
-## 4.8. Mixins
+## 4.8. Mixiny (mixins)
 
 No translation

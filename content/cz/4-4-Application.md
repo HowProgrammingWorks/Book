@@ -1,3 +1,3 @@
-## 4.4. Application building blocks: files, modules, components
+## 4.4. Stavební bloky aplikací: soubory, moduly, komponenty
 
 No translation

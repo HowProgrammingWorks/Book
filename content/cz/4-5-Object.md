@@ -1,3 +1,3 @@
-## 4.5. Object, prototype and class
+## 4.5. Objekt, prototyp a třída
 
 No translation
