@@ -1,3 +1,3 @@
-## 3.6. Trees and Graphs
+## 3.7. Dataset projections
 
 No translation
