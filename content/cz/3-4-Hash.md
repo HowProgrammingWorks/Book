@@ -1,3 +1,3 @@
-## 3.4. Dictionary, hash table and associative array
+## 3.4. Slovník, hashovací tabulka a asociativní pole
 
 No translation

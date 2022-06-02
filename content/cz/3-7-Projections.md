@@ -1,3 +1,3 @@
-## 3.6. Trees and Graphs
+## 3.7. Projekce a zobrazení datových
 
 No translation

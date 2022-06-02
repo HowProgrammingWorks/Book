@@ -1,3 +1,3 @@
-## 3.3. Array, list, set, tuple
+## 3.3. Масив, список, множина, кортеж
 
 No translation

@@ -1,3 +1,3 @@
-## 3.6. Trees and Graphs
+## 3.8. Оцінка обчислювальної складності
 
 No translation

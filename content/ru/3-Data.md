@@ -1,3 +1,3 @@
-# 3. Application state, data structures and collections
+# 3. Состояние приложения, структуры данных и коллекции
 
 No translation
