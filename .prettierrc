@@ -2,10 +2,17 @@
   "singleQuote": true,
   "trailingComma": "es5",
   "proseWrap": "never",
+  "printWidth": 80,
   "overrides": [
     {
       "files": ".prettierrc",
       "options": { "parser": "json" }
+    },
+    {
+      "files": "*.md",
+      "options": {
+        "printWidth": 58
+      }
     }
   ]
 }
