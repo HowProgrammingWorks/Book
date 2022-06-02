@@ -1,3 +1,3 @@
-## 4.2. Development environment and debugging
+## 4.2. Среда разработки и отладка кода
 
 No translation

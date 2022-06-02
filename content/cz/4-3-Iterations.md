@@ -1,3 +1,3 @@
-## 4.3. Iterations: recursion, iterators, and generators
+## 4.3. Iterace: rekurze, iterátory a generátory
 
 No translation

@@ -1,3 +1,3 @@
-## 4.6. Partial application and currying, pipe and compose
+## 4.6. Částečná aplikace a curryfikace, skládání funkcí
 
 No translation

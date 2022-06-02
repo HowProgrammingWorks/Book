@@ -1,3 +1,3 @@
-## 4.4. Application building blocks: files, modules, components
+## 4.4. Структура приложения: файлы, модули, компоненты
 
 No translation
