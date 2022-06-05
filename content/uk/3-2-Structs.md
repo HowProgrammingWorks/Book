@@ -280,8 +280,7 @@ void printProducts(std::vector<Product> items) {
 }
 
 int main() {
-  std::map<std::string, std::vector<Product>> purchase
-  {
+  std::map<std::string, std::vector<Product>> purchase {
     { "Electronics", {
       { "Laptop", 1500 },
       { "Keyboard", 100 },
