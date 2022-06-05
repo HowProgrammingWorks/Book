@@ -192,8 +192,8 @@ const print = (fileName, err, data) => {
   console.log({ lines: data.split('\n').length });
 };
 
-const fileName = './1-callback.js';
-
+const fileName = './file.txt';
+`
 const callback = print.bind(null, fileName);
 fs.readFile(fileName, 'utf8', callback);
 ```
@@ -275,9 +275,9 @@ const adder = (initial) => {
   };
   return add;
 };
+```
 
-// Usage
-
+```js
 const maxReached = (value) => {
   console.log('max value reached, value: ' + value);
 };

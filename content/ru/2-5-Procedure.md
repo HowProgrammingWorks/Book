@@ -40,9 +40,11 @@ const greetings = (name) =>
   name.includes('Augustus')
     ? `${SALUTATION}, ${colorize(name)}!`
     : `Hello, ${name}!`;
+```
 
-// Usage
+> Usage
 
+```js
 const fullName = 'Marcus Aurelius Antoninus Augustus';
 console.log(greetings(fullName));
 
