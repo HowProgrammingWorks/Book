@@ -45,7 +45,7 @@ const generate = (lang) => {
         body: [
           [
             {
-              margin: [30, 5, 30, 5],
+              margin: [30, 5, 10, 5],
               text,
               preserveLeadingSpaces: true,
             },

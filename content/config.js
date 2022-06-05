@@ -86,7 +86,7 @@ module.exports = {
   code: {
     border: false,
     layout: 'noBorders',
-    fontSize: 11,
+    fontSize: 10.2,
     color: '#555',
     fillColor: '#eee',
     font: 'Mono',
