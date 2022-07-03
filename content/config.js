@@ -44,7 +44,7 @@ module.exports = {
     en: require('./en/Book.js'),
     ru: require('./ru/Book.js'),
     cz: require('./cz/Book.js'),
-    uk: require('./uk/Book.js'),
+    ua: require('./ua/Book.js'),
   },
   title: {
     bold: true,
