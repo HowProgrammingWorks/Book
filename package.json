@@ -18,6 +18,8 @@
     "url": "https://www.patreon.com/tshemsedinov"
   },
   "scripts": {
+    "test": "npm run lint",
+    "lint": "eslint . && prettier -c \"**/*.js\" \"**/*.json\" \"**/*.md\"",
     "build": "npm run format && node content/build.js",
     "format": "prettier --write \"**/*.js\" \"**/*.json\" \"**/*.md\""
   },
@@ -27,6 +29,7 @@
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-prettier": "^4.2.1",
+    "metavm": "^1.2.1",
     "pdfmake": "^0.2.5",
     "prettier": "^2.7.1"
   }
