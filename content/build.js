@@ -3,17 +3,22 @@
 const now = new Date();
 
 const fs = require('fs');
+const path = require('path');
+const metavm = require('metavm');
 const PdfPrinter = require('pdfmake');
-const config = require('./config.js');
-const languages = Object.keys(config.languages);
-const printer = new PdfPrinter(config.fonts);
 
 const BLOCK_TEXT = 1;
 const BLOCK_CODE = 2;
 
-const generate = (lang) => {
+const readConfig = async (fileName) => {
+  const configFile = path.join(__dirname, fileName);
+  const { exports } = await metavm.readScript(configFile);
+  return exports;
+};
+
+const generate = async (config, lang) => {
   const content = [];
-  const front = config.languages[lang];
+  const front = await readConfig(`${lang}/Book.js`);
 
   content.push({ text: front.title, ...config.title });
   content.push({ text: front.subtitle, ...config.subtitle });
@@ -102,6 +107,7 @@ const generate = (lang) => {
     section(name);
   }
 
+  const printer = new PdfPrinter(config.fonts);
   const book = printer.createPdfKitDocument({
     content,
     pageSize: 'A5',
@@ -120,8 +126,12 @@ const generate = (lang) => {
   book.end();
 };
 
-for (const lang of languages) {
-  generate(lang);
-}
+const main = async () => {
+  const config = await readConfig('config.js');
+  for (const lang of config.languages) {
+    await generate(config, lang);
+  }
+  console.log('Time spent:', new Date() - now);
+};
 
-console.log('Time spent:', new Date() - now);
+main();
