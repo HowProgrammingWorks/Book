@@ -1,4 +1,5 @@
-module.exports = {
+({
+  languages: ['en', 'ru', 'cz', 'uk'],
   sections: [
     'Abstract',
     'Index',
@@ -40,12 +41,6 @@ module.exports = {
     '4-8-Mixins',
     '4-9-Dependencies',
   ],
-  languages: {
-    en: require('./en/Book.js'),
-    ru: require('./ru/Book.js'),
-    cz: require('./cz/Book.js'),
-    uk: require('./uk/Book.js'),
-  },
   title: {
     bold: true,
     fontSize: 28,
@@ -112,4 +107,4 @@ module.exports = {
       bolditalics: 'fonts/RobotoMono-MediumItalic.ttf',
     },
   },
-};
+});
