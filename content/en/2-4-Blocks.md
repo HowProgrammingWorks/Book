@@ -1,6 +1,10 @@
 ## 2.4. Operator and expression, code block, function, loop, condition
 
 ```js
+(len - 1) * f(x, INTERVAL);
+```
+
+```js
 const MAX_VALUE = 10;
 
 console.log('Begin');
