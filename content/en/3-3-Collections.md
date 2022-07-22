@@ -193,9 +193,8 @@ const intersection = (s1, s2) => {
 ```
 
 ```js
-const intersection = (s1, s2) => new Set(
-  [...s1].filter((v) => s2.has(v))
-);
+const intersection = (s1, s2) =>
+  new Set([...s1].filter((v) => s2.has(v)));
 ```
 
 > Difference
@@ -212,9 +211,8 @@ const difference = (s1, s2) => {
 ```
 
 ```js
-const difference = (s1, s2) => new Set(
-  [...s1].filter((v) => !s2.has(v))
-);
+const difference = (s1, s2) =>
+  new Set([...s1].filter((v) => !s2.has(v)));
 ```
 
 > Complement

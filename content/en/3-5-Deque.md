@@ -158,7 +158,7 @@ list.push(obj1);
 list.push(obj2);
 list.unshift(obj3);
 
-console.dir(list.pop());   // { name: 'second' }
+console.dir(list.pop()); // { name: 'second' }
 console.dir(list.shift()); // { name: 'third' }
 console.dir(list.shift()); // { name: 'first' }
 ```
