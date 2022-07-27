@@ -93,6 +93,10 @@
     color: '#000',
     fillColor: '#bbb',
   },
+  list: {
+    fontSize: 11,
+    margin: [40, 0, 30, 10],
+  },
   fonts: {
     Roboto: {
       normal: 'fonts/Roboto-Regular.ttf',
