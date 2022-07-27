@@ -9,6 +9,7 @@ const PdfPrinter = require('pdfmake');
 
 const BLOCK_TEXT = 1;
 const BLOCK_CODE = 2;
+const BLOCK_LIST = 3;
 
 const readConfig = async (fileName) => {
   const configFile = path.join(__dirname, fileName);
@@ -25,6 +26,13 @@ const generate = async (config, lang) => {
   content.push({ text: front.copyright, ...config.copyright });
   content.push({ text: front.location, ...config.location });
 
+  const parseInline = (s) => {
+    return s.split('`').map((text, i) => {
+      const style = i % 2 === 0 ? 'normal' : 'bold';
+      return { text, style };
+    });
+  };
+
   const caption = (s) => {
     const text = s.replace(/#/g, '');
     const page = s.startsWith('# ') ? { pageBreak: 'before' } : {};
@@ -36,10 +44,10 @@ const generate = async (config, lang) => {
   };
 
   const para = (s) => {
-    const sections = s.split('`').map((text, i) => {
-      const style = i % 2 === 0 ? 'normal' : 'bold';
-      return { text, style, alignment: 'justify' };
-    });
+    const sections = parseInline(s).map((content) => ({
+      ...content,
+      alignment: 'justify',
+    }));
     content.push({ text: sections, ...config.para });
   };
 
@@ -72,6 +80,15 @@ const generate = async (config, lang) => {
     });
   };
 
+  const list = (rows) => {
+    const listItems = rows.map((row) => {
+      const text = row.replace('- ', '');
+      return { text: parseInline(text) };
+    });
+
+    content.push({ ul: listItems, ...config.list });
+  };
+
   const section = (name) => {
     const src = fs.readFileSync(`content/${lang}/${name}.md`, 'utf8');
     const rows = src.split('\n');
@@ -97,6 +114,13 @@ const generate = async (config, lang) => {
       } else if (block === BLOCK_TEXT && row === '') {
         para(lines.join(' '));
         lines = [];
+      } else if (block === BLOCK_LIST && row === '') {
+        list(lines);
+        block = BLOCK_TEXT;
+        lines = [];
+      } else if (row.startsWith('- ')) {
+        block = BLOCK_LIST;
+        lines.push(row);
       } else {
         lines.push(row);
       }
