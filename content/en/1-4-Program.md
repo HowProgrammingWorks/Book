@@ -9,5 +9,3 @@ An algorithm is not yet a program, it is an idea of ​​solving problems, desc
 > An example of the implementation of the GCD algorithm
 
 In JavaScript, Euclid's algorithm for finding the common denominator (common measure or greatest common divisor) can be written as follows:
-
-
