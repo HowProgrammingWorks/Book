@@ -123,6 +123,6 @@ const total = calculateTotal(purchase);
 // Результат записуємо в локальну константу
 // Якщо сума не перевищила максимальної, то виводимо її
 if (total <= MAX_PURCHASE) {
-  console.log({total}); // Виводить: {total: 1660}
+  console.log({ total }); // Виводить: {total: 1660}
 }
 ```
