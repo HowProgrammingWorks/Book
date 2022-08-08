@@ -1,6 +1,7 @@
 # Obsah
 
-1. Úvod 1.1. Přístup k výuce programování  
+1. Úvod  
+   1.1. Přístup k výuce programování  
    1.2. Příklady v jazycích JavaScript, Python a C  
    1.3. Modelování: abstrakce a opětovné použití  
    1.4. Algoritmus, program, syntaxe, jazyk  
