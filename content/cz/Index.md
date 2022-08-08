@@ -11,8 +11,8 @@
 2. Základní pojmy  
    2.1. Hodnota, identifikátor, proměnná a konstanta, literál, přiřazení  
    2.2. Datové typy, skalární, referenční a strukturované typy  
-   2.3. Kontexty a lexikální rozsah  
-   2.4. Operátor a výraz, blok kódu, funkce, smyčka, podmínka  
+   2.3. Operátor a výraz, blok kódu, funkce, smyčka, podmínka  
+   2.4. Kontexty a lexikální rozsah  
    2.5. Procedurální paradigma, volání, zásobník a halda  
    2.6. Funkce vyššího řádu, čistá funkce, vedlejší účinky  
    2.7. Uzávěry, funkce zpětného volání, zabalení a události  

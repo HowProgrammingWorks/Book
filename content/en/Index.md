@@ -11,8 +11,8 @@
 2. Basic concepts  
    2.1. Value, identifier, variable and constant, literal, assignment  
    2.2. Data types, scalar, reference and structured types  
-   2.3. Contexts and lexical scope  
-   2.4. Operator and expression, code block, function, loop, condition  
+   2.3. Operator and expression, code block, function, loop, condition  
+   2.4. Contexts and lexical scope  
    2.5. Procedural paradigm, call, stack and heap  
    2.6. Higher-order function, pure function, side effects  
    2.7. Closures, callbacks, wrappers, and events  
