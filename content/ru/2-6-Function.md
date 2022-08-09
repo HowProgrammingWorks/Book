@@ -76,19 +76,16 @@ const compose = (f1, f2) => (x) => f2(f1(x));
 ```
 
 ```js
-const compose =
-  (...funcs) =>
-  (...args) =>
-    funcs.reduce((args, fn) => [fn(...args)], args);
+// prettier-ignore
+const compose = (...funcs) => (...args) =>
+  funcs.reduce((args, fn) => [fn(...args)], args);
 ```
 
 > Частичное применение (Partial application)
 
 ```js
-const partial =
-  (fn, x) =>
-  (...args) =>
-    fn(x, ...args);
+// prettier-ignore
+const partial = (fn, x) => (...args) => fn(x, ...args);
 ```
 
 > Каррирование (Currying)
