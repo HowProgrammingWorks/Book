@@ -61,14 +61,16 @@ const expr2 = add(
 const compose = (f1, f2) => (x) => f2(f1(x));
 ```
 
-```
+```js
+// prettier-ignore
 const compose = (...funcs) => (...args) =>
   funcs.reduce((args, fn) => [fn(...args)], args);
 ```
 
 > Partial application
 
-```
+```js
+// prettier-ignore
 const partial = (fn, x) => (...args) => fn(x, ...args);
 ```
 
