@@ -33,4 +33,4 @@ sum = firstNum + secondNum;
 print({ 'sum': sum  });
 ```
 
-Dále budeme často porovnávat příklady kódu v různých jazycích, hledat a opravovat chyby, optimalizovat kód a především zlepšovat jeho čitelnost a srozumitelnost.
+Dále budeme často porovnávat příklady kódu v různých jazycích, hledat a opravovat chyby, optimalizovat kód a zlepšovat především jeho čitelnost a srozumitelnost.
