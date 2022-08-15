@@ -23,7 +23,7 @@ Nebo ještě kratší formou, ale nebude to o nic méně jasné, pokud porovnát
 const gcd = (a, b) => (b === 0 ? a : gcd(b, a % b));
 ```
 
-Tento jednoduchý algoritmus je rekurzivní, tzn. zavolá sám sebe, aby vypočítal další krok, a skončí, když `b` dosáhne `0`. U algoritmů můžeme určit výpočetní náročnost, klasifikovat je podle zdrojů procesorového času a paměti potřebné k řešení problému.
+Tento jednoduchý algoritmus je rekurzivní, tzn. zavolá sám sebe, aby vypočítal další krok, a skončí, když `b` dosáhne `0`. U algoritmů můžeme určit výpočetní náročnost, klasifikovat je podle zdrojů procesorového času a paměti potřebných k řešení problému.
 
 > Program
 
