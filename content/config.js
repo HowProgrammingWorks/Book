@@ -20,7 +20,7 @@
     '2-6-Function',
     '2-7-Closure',
     '2-8-Errors',
-    '2-9-Monomorphic',
+    '2-9-Tasks',
     '3-Data',
     '3-1-State',
     '3-2-Structs',
