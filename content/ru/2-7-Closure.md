@@ -164,12 +164,15 @@ console.log(a);
 > Callback
 
 ```js
-const add = (a, b) => a + b;
+// Обычный возврат результата
+const sum = (a, b) => a + b;
+
+// Возврат результата в функцию обратного вызова
 const sum = (a, b, callback) => callback(a + b);
 ```
 
 ```js
-console.log('add(5, 2) =', add(5, 2));
+console.log('sum(5, 2) =', sum(5, 2));
 sum(5, 2, console.log.bind(null, 'sum(5, 2) ='));
 ```
 

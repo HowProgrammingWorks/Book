@@ -11,7 +11,7 @@ function sum(a, b) {
 > Named function expression
 
 ```js
-const max = function max(a, b) {
+const sum = function sum(a, b) {
   return a + b;
 };
 ```
@@ -19,7 +19,7 @@ const max = function max(a, b) {
 > Anonymous function expression
 
 ```js
-const max = function (a, b) {
+const sum = function (a, b) {
   return a + b;
 };
 ```
@@ -27,7 +27,7 @@ const max = function (a, b) {
 > Arrow function (Lambda function)
 
 ```js
-const max = (a, b) => {
+const sum = (a, b) => {
   return a + b;
 };
 ```
@@ -35,21 +35,22 @@ const max = (a, b) => {
 > Lambda expression
 
 ```js
-const max = (a, b) => a + b;
+const sum = (a, b) => a + b;
 ```
 
 ```js
-const add = (a) => (b) => a + b;
+const sum = (a) => (b) => a + b;
 
+// prettier-ignore
 const hash =
   (data = {}) =>
-  (key, value) => ((data[key] = value), data);
+    (key, value) => ((data[key] = value), data);
 ```
 
 > Superposition
 
 ```js
-const expr2 = add(
+const expr2 = sum(
   pow(mul(5, 8), 2),
   div(inc(sqrt(20)), log(2, 7))
 );
@@ -87,10 +88,10 @@ const result = curry((a, b, c) => a + b + c)(1, 2)(3);
 > Wrapper
 
 ```js
-const add = (a, b) => a + b;
+const sum = (a, b) => a + b;
 
-console.log('Add numbers: 5 + 2 = ' + add(5, 2));
-console.log('Add floats: 5.1 + 2.3 = ' + add(5.1, 2.3));
-console.log(`Concatenate: '5' + '2' = '${add('5', '2')}'`);
-console.log('Subtraction: 5 + (-2) = ' + add(5, -2));
+console.log('Add numbers: 5 + 2 = ' + sum(5, 2));
+console.log('Add floats: 5.1 + 2.3 = ' + sum(5.1, 2.3));
+console.log(`Concatenate: '5' + '2' = '${sum('5', '2')}'`);
+console.log('Subtraction: 5 + (-2) = ' + sum(5, -2));
 ```
