@@ -17,7 +17,7 @@
    2.6. Higher-order function, pure function, side effects  
    2.7. Closures, callbacks, wrappers, and events  
    2.8. Exceptions and error handling  
-   2.9. Monomorphic code in dynamic languages
+   2.9. Tasks
 3. Application state, data structures and collections  
    3.1. Stateful and stateless approach  
    3.2. Structs and records  
