@@ -5,7 +5,7 @@
 ```js
 const add = (x) => (y) => {
   const z = x + y;
-  console.log(x + '+' + y + '=' + z);
+  console.log(`${x} + ${y} = ${z}`);
   return z;
 };
 ```
@@ -24,7 +24,7 @@ const add = (x) => (y) => x + y;
 ```js
 const add = (x) => (y) => {
   const z = x + y;
-  console.log(x + '+' + y + '=' + z);
+  console.log(`${x} + ${y} = ${z}`);
   return add(z);
 };
 ```
