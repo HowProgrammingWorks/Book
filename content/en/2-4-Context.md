@@ -1,4 +1,4 @@
-## 2.3. Contexts and lexical scope
+## 2.4. Contexts and lexical scope
 
 > Scope
 

@@ -1,4 +1,4 @@
-## 2.4. Operator and expression, code block, function, loop, condition
+## 2.3. Operator and expression, code block, function, loop, condition
 
 ```js
 (len - 1) * f(x, INTERVAL);
