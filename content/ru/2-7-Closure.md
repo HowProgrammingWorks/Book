@@ -49,7 +49,7 @@ const res = add(5)(2)(3)(7);
 console.log(res);
 ```
 
-> Abstraction (class sunstitution)
+> Abstraction (class substitution)
 
 ```js
 const COLORS = {
