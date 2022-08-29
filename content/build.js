@@ -57,7 +57,7 @@ const generate = async (config, lang) => {
     s = tp.execute(s);
     const sections = parseInline(s).map((content) => ({
       ...content,
-      alignment: 'justify',
+      alignment: 'left',
     }));
     content.push({ text: sections, ...config.para });
   };
