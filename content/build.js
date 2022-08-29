@@ -6,10 +6,17 @@ const fs = require('fs');
 const path = require('path');
 const metavm = require('metavm');
 const PdfPrinter = require('pdfmake');
+const Typograf = require('typograf');
 
 const BLOCK_TEXT = 1;
 const BLOCK_CODE = 2;
 const BLOCK_LIST = 3;
+const LOCALE = {
+  en: 'en-US',
+  ru: 'ru',
+  uk: 'uk',
+  cz: 'common',
+};
 
 const readConfig = async (fileName) => {
   const configFile = path.join(__dirname, fileName);
@@ -18,13 +25,13 @@ const readConfig = async (fileName) => {
 };
 
 const generate = async (config, lang) => {
+  const tp = new Typograf({ locale: [LOCALE[lang], 'en-US'] });
   const content = [];
   const front = await readConfig(`${lang}/Book.js`);
 
-  content.push({ text: front.title, ...config.title });
-  content.push({ text: front.subtitle, ...config.subtitle });
-  content.push({ text: front.copyright, ...config.copyright });
-  content.push({ text: front.location, ...config.location });
+  for (const [name, text] of Object.entries(front)) {
+    content.push({ text: tp.execute(text), ...config[name] });
+  }
 
   const parseInline = (s) => {
     return s.split('`').map((text, i) => {
@@ -34,16 +41,20 @@ const generate = async (config, lang) => {
   };
 
   const caption = (s) => {
-    const text = s.replace(/#/g, '');
+    const text = tp.execute(s.replace(/#/g, ''));
     const page = s.startsWith('# ') ? { pageBreak: 'before' } : {};
     content.push({ text, ...config.caption, ...page });
   };
 
   const index = (s) => {
+    tp.disableRule('common/space/trimLeft');
+    s = tp.execute(s);
     content.push({ text: s, ...config.index });
+    tp.enableRule('common/space/trimLeft');
   };
 
   const para = (s) => {
+    s = tp.execute(s);
     const sections = parseInline(s).map((content) => ({
       ...content,
       alignment: 'justify',
@@ -70,7 +81,7 @@ const generate = async (config, lang) => {
   };
 
   const quote = (s) => {
-    const text = s.replace('> ', '');
+    const text = tp.execute(s.replace('> ', ''));
     content.push({
       table: {
         widths: ['*'],
@@ -82,7 +93,7 @@ const generate = async (config, lang) => {
 
   const list = (rows) => {
     const listItems = rows.map((row) => {
-      const text = row.replace('- ', '');
+      const text = tp.execute(row.replace('- ', ''));
       return { text: parseInline(text) };
     });
 
@@ -121,10 +132,8 @@ const generate = async (config, lang) => {
       } else if (row.startsWith('- ')) {
         block = BLOCK_LIST;
         lines.push(row);
-      } else {
-        if (row !== '// prettier-ignore') {
-          lines.push(row);
-        }
+      } else if (row !== '// prettier-ignore') {
+        lines.push(row);
       }
     }
   };

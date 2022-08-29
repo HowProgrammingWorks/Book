@@ -31,6 +31,7 @@
     "eslint-plugin-prettier": "^4.2.1",
     "metavm": "^1.2.1",
     "pdfmake": "^0.2.5",
-    "prettier": "^2.7.1"
+    "prettier": "^2.7.1",
+    "typograf": "^6.14.1"
   }
 }
