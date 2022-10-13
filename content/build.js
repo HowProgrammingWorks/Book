@@ -2,8 +2,8 @@
 
 const now = new Date();
 
-const fs = require('fs');
-const path = require('path');
+const fs = require('node:fs');
+const path = require('node:path');
 const metavm = require('metavm');
 const PdfPrinter = require('pdfmake');
 
