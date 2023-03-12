@@ -75,7 +75,7 @@
   },
   para: {
     fontSize: 11,
-    alignment: 'justify',
+    alignment: 'left',
     margin: [30, 0, 30, 10],
   },
   code: {
