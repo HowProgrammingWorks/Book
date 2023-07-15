@@ -24,13 +24,13 @@
     "format": "prettier --write \"**/*.js\" \"**/*.json\" \"**/*.md\""
   },
   "dependencies": {
-    "eslint": "^8.20.0",
-    "eslint-config-metarhia": "^8.1.0",
-    "eslint-config-prettier": "^8.5.0",
-    "eslint-plugin-import": "^2.26.0",
-    "eslint-plugin-prettier": "^4.2.1",
-    "metavm": "^1.2.1",
-    "pdfmake": "^0.2.5",
-    "prettier": "^2.7.1"
+    "eslint": "^8.45.0",
+    "eslint-config-metarhia": "^8.2.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-prettier": "^5.0.0",
+    "metavm": "^1.2.5",
+    "pdfmake": "^0.2.7",
+    "prettier": "^3.0.0"
   }
 }
