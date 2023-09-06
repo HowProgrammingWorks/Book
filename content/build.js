@@ -121,10 +121,8 @@ const generate = async (config, lang) => {
       } else if (row.startsWith('- ')) {
         block = BLOCK_LIST;
         lines.push(row);
-      } else {
-        if (row !== '// prettier-ignore') {
-          lines.push(row);
-        }
+      } else if (row !== '// prettier-ignore') {
+        lines.push(row);
       }
     }
   };
