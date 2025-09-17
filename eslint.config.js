@@ -14,4 +14,10 @@ module.exports = [
       'prettier.config.*',
     ],
   },
+  {
+    files: ['**/Book.js', 'content/config.js'],
+    rules: {
+      strict: 'off',
+    },
+  },
 ];
