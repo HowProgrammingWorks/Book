@@ -1,5 +1,5 @@
 ({
-  languages: ['en', 'ru', 'cz', 'uk'],
+  languages: ['en', 'ru', 'cz', 'uk', 'de'],
   sections: [
     'Abstract',
     'Index',

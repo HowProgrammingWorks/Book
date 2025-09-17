@@ -89,7 +89,12 @@ const generate = async (config, lang) => {
   };
 
   const section = (name) => {
-    const src = fs.readFileSync(`content/${lang}/${name}.md`, 'utf8');
+    const filePath = `content/${lang}/${name}.md`;
+    if (!fs.existsSync(filePath)) {
+      console.log(`Skipping missing file: ${filePath}`);
+      return;
+    }
+    const src = fs.readFileSync(filePath, 'utf8');
     const rows = src.split('\n');
     let block = BLOCK_TEXT;
     let lines = [];
