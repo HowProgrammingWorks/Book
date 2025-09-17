@@ -26,12 +26,11 @@ const generate = async (config, lang) => {
   content.push({ text: front.copyright, ...config.copyright });
   content.push({ text: front.location, ...config.location });
 
-  const parseInline = (s) => {
-    return s.split('`').map((text, i) => {
+  const parseInline = (s) =>
+    s.split('`').map((text, i) => {
       const style = i % 2 === 0 ? 'normal' : 'bold';
       return { text, style };
     });
-  };
 
   const caption = (s) => {
     const text = s.replace(/#/g, '');
