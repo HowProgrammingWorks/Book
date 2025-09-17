@@ -2,23 +2,35 @@
 
 const now = new Date();
 
-const fs = require('fs');
+const fs = require('node:fs');
+const path = require('node:path');
+const metavm = require('metavm');
 const PdfPrinter = require('pdfmake');
-const config = require('./config.js');
-const languages = Object.keys(config.languages);
-const printer = new PdfPrinter(config.fonts);
 
 const BLOCK_TEXT = 1;
 const BLOCK_CODE = 2;
+const BLOCK_LIST = 3;
 
-const generate = (lang) => {
+const readConfig = async (fileName) => {
+  const configFile = path.join(__dirname, fileName);
+  const { exports } = await metavm.readScript(configFile);
+  return exports;
+};
+
+const generate = async (config, lang) => {
   const content = [];
-  const front = config.languages[lang];
+  const front = await readConfig(`${lang}/Book.js`);
 
   content.push({ text: front.title, ...config.title });
   content.push({ text: front.subtitle, ...config.subtitle });
   content.push({ text: front.copyright, ...config.copyright });
   content.push({ text: front.location, ...config.location });
+
+  const parseInline = (s) =>
+    s.split('`').map((text, i) => {
+      const style = i % 2 === 0 ? 'normal' : 'bold';
+      return { text, style };
+    });
 
   const caption = (s) => {
     const text = s.replace(/#/g, '');
@@ -31,10 +43,10 @@ const generate = (lang) => {
   };
 
   const para = (s) => {
-    const sections = s.split('`').map((text, i) => {
-      const style = i % 2 === 0 ? 'normal' : 'bold';
-      return { text, style, alignment: 'justify' };
-    });
+    const sections = parseInline(s).map((content) => ({
+      ...content,
+      alignment: 'justify',
+    }));
     content.push({ text: sections, ...config.para });
   };
 
@@ -67,6 +79,15 @@ const generate = (lang) => {
     });
   };
 
+  const list = (rows) => {
+    const listItems = rows.map((row) => {
+      const text = row.replace('- ', '');
+      return { text: parseInline(text) };
+    });
+
+    content.push({ ul: listItems, ...config.list });
+  };
+
   const section = (name) => {
     const src = fs.readFileSync(`content/${lang}/${name}.md`, 'utf8');
     const rows = src.split('\n');
@@ -92,7 +113,14 @@ const generate = (lang) => {
       } else if (block === BLOCK_TEXT && row === '') {
         para(lines.join(' '));
         lines = [];
-      } else {
+      } else if (block === BLOCK_LIST && row === '') {
+        list(lines);
+        block = BLOCK_TEXT;
+        lines = [];
+      } else if (row.startsWith('- ')) {
+        block = BLOCK_LIST;
+        lines.push(row);
+      } else if (row !== '// prettier-ignore') {
         lines.push(row);
       }
     }
@@ -102,6 +130,7 @@ const generate = (lang) => {
     section(name);
   }
 
+  const printer = new PdfPrinter(config.fonts);
   const book = printer.createPdfKitDocument({
     content,
     pageSize: 'A5',
@@ -120,8 +149,12 @@ const generate = (lang) => {
   book.end();
 };
 
-for (const lang of languages) {
-  generate(lang);
-}
+const main = async () => {
+  const config = await readConfig('config.js');
+  for (const lang of config.languages) {
+    await generate(config, lang);
+  }
+  console.log('Time spent:', new Date() - now);
+};
 
-console.log('Time spent:', new Date() - now);
+main();

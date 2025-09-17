@@ -5,7 +5,7 @@
 ```js
 const add = (x) => (y) => {
   const z = x + y;
-  console.log(x + '+' + y + '=' + z);
+  console.log(`${x} + ${y} = ${z}`);
   return z;
 };
 ```
@@ -24,7 +24,7 @@ const add = (x) => (y) => x + y;
 ```js
 const add = (x) => (y) => {
   const z = x + y;
-  console.log(x + '+' + y + '=' + z);
+  console.log(`${x} + ${y} = ${z}`);
   return add(z);
 };
 ```
@@ -49,7 +49,7 @@ const res = add(5)(2)(3)(7);
 console.log(res);
 ```
 
-> Abstraction (class sunstitution)
+> Abstraction (class substitution)
 
 ```js
 const COLORS = {
@@ -164,12 +164,15 @@ console.log(a);
 > Callback
 
 ```js
-const add = (a, b) => a + b;
+// Return result
+const sum = (a, b) => a + b;
+
+// Pass result to a callback
 const sum = (a, b, callback) => callback(a + b);
 ```
 
 ```js
-console.log('add(5, 2) =', add(5, 2));
+console.log('sum(5, 2) =', sum(5, 2));
 sum(5, 2, console.log.bind(null, 'sum(5, 2) ='));
 ```
 

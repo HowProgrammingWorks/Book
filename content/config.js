@@ -1,4 +1,5 @@
-module.exports = {
+({
+  languages: ['en', 'ru', 'cz', 'uk'],
   sections: [
     'Abstract',
     'Index',
@@ -13,13 +14,13 @@ module.exports = {
     '2-Basic',
     '2-1-Identifiers',
     '2-2-Types',
-    '2-3-Context',
-    '2-4-Blocks',
+    '2-3-Blocks',
+    '2-4-Context',
     '2-5-Procedure',
     '2-6-Function',
     '2-7-Closure',
     '2-8-Errors',
-    '2-9-Monomorphic',
+    '2-9-Tasks',
     '3-Data',
     '3-1-State',
     '3-2-Structs',
@@ -40,12 +41,6 @@ module.exports = {
     '4-8-Mixins',
     '4-9-Dependencies',
   ],
-  languages: {
-    en: require('./en/Book.js'),
-    ru: require('./ru/Book.js'),
-    cz: require('./cz/Book.js'),
-    uk: require('./uk/Book.js'),
-  },
   title: {
     bold: true,
     fontSize: 28,
@@ -98,6 +93,10 @@ module.exports = {
     color: '#000',
     fillColor: '#bbb',
   },
+  list: {
+    fontSize: 11,
+    margin: [40, 0, 30, 10],
+  },
   fonts: {
     Roboto: {
       normal: 'fonts/Roboto-Regular.ttf',
@@ -112,4 +111,4 @@ module.exports = {
       bolditalics: 'fonts/RobotoMono-MediumItalic.ttf',
     },
   },
-};
+});
