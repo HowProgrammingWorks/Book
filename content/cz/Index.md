@@ -1,6 +1,7 @@
 # Obsah
 
-1. Úvod 1.1. Přístup k výuce programování  
+1. Úvod  
+   1.1. Přístup k výuce programování  
    1.2. Příklady v jazycích JavaScript, Python a C  
    1.3. Modelování: abstrakce a opětovné použití  
    1.4. Algoritmus, program, syntaxe, jazyk  
@@ -10,13 +11,13 @@
 2. Základní pojmy  
    2.1. Hodnota, identifikátor, proměnná a konstanta, literál, přiřazení  
    2.2. Datové typy, skalární, referenční a strukturované typy  
-   2.3. Kontexty a lexikální rozsah  
-   2.4. Operátor a výraz, blok kódu, funkce, smyčka, podmínka  
+   2.3. Operátor a výraz, blok kódu, funkce, smyčka, podmínka  
+   2.4. Kontexty a lexikální rozsah  
    2.5. Procedurální paradigma, volání, zásobník a halda  
    2.6. Funkce vyššího řádu, čistá funkce, vedlejší účinky  
    2.7. Uzávěry, funkce zpětného volání, zabalení a události  
    2.8. Výjimky a řešení chyb  
-   2.9. Monomorfní kód v dynamických jazycích
+   2.9. Úkoly
 3. Stav aplikace, datové struktury a kolekce  
    3.1. Stavové a bezstavové přístupy (stateful and stateless)  
    3.2. Struktury a záznamy  

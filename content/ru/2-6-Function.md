@@ -13,7 +13,7 @@ function sum(a, b) {
 Функциональное выражение с именованной функцией (Named function expression):
 
 ```js
-const max = function max(a, b) {
+const sum = function sum(a, b) {
   return a + b;
 };
 ```
@@ -21,7 +21,7 @@ const max = function max(a, b) {
 Анонимное функциональное выражение (Anonymous function expression):
 
 ```js
-const max = function (a, b) {
+const sum = function (a, b) {
   return a + b;
 };
 ```
@@ -29,7 +29,7 @@ const max = function (a, b) {
 Стрелочная или лямбда-функция (Arrow, Lambda function):
 
 ```js
-const max = (a, b) => {
+const sum = (a, b) => {
   return a + b;
 };
 ```
@@ -37,7 +37,7 @@ const max = (a, b) => {
 Лямбда-выражение, Функция-стрелка с выражением в качестве тела (Lambda expression, Arrow function):
 
 ```js
-const max = (a, b) => a + b;
+const sum = (a, b) => a + b;
 ```
 
 > Чистая функция (Pure Function) — детерминированная функция без побочных эффектов.
@@ -53,7 +53,7 @@ const max = (a, b) => a + b;
 Примеры:
 
 ```js
-const add = (a) => (b) => a + b;
+const sum = (a) => (b) => a + b;
 
 const hash =
   (data = {}) =>
@@ -63,7 +63,7 @@ const hash =
 > Суперпозиция (Superposition) — объединение вызова функций в выражения таким образом, что результат одних функций становится аргументами других функций.
 
 ```js
-const expr2 = add(
+const expr2 = sum(
   pow(mul(5, 8), 2),
   div(inc(sqrt(20)), log(2, 7))
 );
@@ -75,14 +75,16 @@ const expr2 = add(
 const compose = (f1, f2) => (x) => f2(f1(x));
 ```
 
-```
+```js
+// prettier-ignore
 const compose = (...funcs) => (...args) =>
   funcs.reduce((args, fn) => [fn(...args)], args);
 ```
 
 > Частичное применение (Partial application)
 
-```
+```js
+// prettier-ignore
 const partial = (fn, x) => (...args) => fn(x, ...args);
 ```
 
@@ -107,10 +109,10 @@ const result = curry((a, b, c) => a + b + c)(1, 2)(3);
 Функция, которая оборачивает другую функцию (иногда объект, интерфейс или функциональный объект), добавляя ему дополнительное поведение. Можно обернуть целый API интерфейс и даже асинхронную функцию вместе с колбеками (если известен контракт).
 
 ```js
-const add = (a, b) => a + b;
+const sum = (a, b) => a + b;
 
-console.log(`Add nums:    ${add(5, 2)}`);
-console.log(`Add float:   ${add(5.1, 2.3)}`);
-console.log(`Concatenate: ${add('5', '2')}`);
-console.log(`Subtraction: ${add(5, -2)}`);
+console.log(`Add nums:    ${sum(5, 2)}`);
+console.log(`Add float:   ${sum(5.1, 2.3)}`);
+console.log(`Concatenate: ${sum('5', '2')}`);
+console.log(`Subtraction: ${sum(5, -2)}`);
 ```

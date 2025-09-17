@@ -18,16 +18,20 @@
     "url": "https://www.patreon.com/tshemsedinov"
   },
   "scripts": {
+    "test": "npm run lint",
+    "lint": "eslint . && prettier -c \"**/*.js\" \"**/*.json\" \"**/*.md\"",
+    "fix": "eslint . --fix && prettier --write \"**/*.js\" \"**/*.json\" \"**/*.md\"",
     "build": "npm run format && node content/build.js",
     "format": "prettier --write \"**/*.js\" \"**/*.json\" \"**/*.md\""
   },
   "dependencies": {
-    "eslint": "^8.12.0",
-    "eslint-config-metarhia": "^7.0.1",
-    "eslint-config-prettier": "^8.5.0",
-    "eslint-plugin-import": "^2.25.4",
-    "eslint-plugin-prettier": "^4.0.0",
-    "pdfmake": "^0.2.4",
-    "prettier": "^2.6.1"
+    "eslint": "^9.35.0",
+    "eslint-config-metarhia": "^9.1.3",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-import": "^2.32.0",
+    "eslint-plugin-prettier": "^5.5.4",
+    "metavm": "^1.4.5",
+    "pdfmake": "^0.2.20",
+    "prettier": "^3.6.2"
   }
 }
