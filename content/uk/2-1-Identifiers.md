@@ -6,10 +6,10 @@
 
 Є різні конвенції (домовленості) про іменування, традиції мов і парадигм, але у всіх них імена мають бути _консистентні_ (однотипні) і _зрозумілі_ навіть для тих, хто цей код не писав. Приклади хороших імен ідентифікаторів:
 
-- Глобальні змінні: `MAX_PURCHASE`, `REQUEST_TIMEOUT`, `ERROR_CODES`
-- Колекції: `prices`, `goods`, `boughtItems`
-- Окремі значення: `amount`, `groupName`, `total`
-- Функції: `calculateSubtotal`, `calculateTotal`, `validateExpenses`
+- Глобальні змінні: `MAX_PURCHASE`, `REQUEST_TIMEOUT`, `ERROR_CODES`;
+- Колекції: `prices`, `goods`, `boughtItems`;
+- Окремі значення: `amount`, `groupName`, `total`;
+- Функції: `calculateSubtotal`, `calculateTotal`, `validateExpenses`;
 
 Приклади поганих імен розглянемо докладніше:
 
