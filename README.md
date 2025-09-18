@@ -2,7 +2,13 @@
 
 ## Multi-paradigm approach in the Software Engineering
 
-[Index EN](content/en/Index.md) | [Оглавление RU](content/ru/Index.md) | [Зміст UK](content/uk/Index.md) | [Obsah CZ](content/cz/Index.md)
+| Language | Index | PDF |
+| --- | --- | --- |
+| English (EN) | [Index](content/en/Index.md) | [Download](release/Metaprogramming-en.pdf) |
+| German (DE) | [Inhalt](content/de/Index.md) | [Download](release/Metaprogramming-de.pdf) |
+| Russian (RU) | [Оглавление](content/ru/Index.md) | [Download](release/Metaprogramming-ru.pdf) |
+| Czech (CZ) | [Obsah](content/cz/Index.md) | [Download](release/Metaprogramming-cz.pdf) |
+| Ukrainian (UK) | [Зміст](content/uk/Index.md) | [Download](release/Metaprogramming-uk.pdf) |
 
 Generated books are located in _/release_ folder
 
