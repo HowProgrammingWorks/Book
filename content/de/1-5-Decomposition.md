@@ -1,3 +1,3 @@
-## 1.5. Декомпозиция и разделение ответственности
+## 1.5. Dekomposition und _Separation of Concerns_
 
 No translation
